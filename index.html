@@ -1,1 +1,555 @@
-Hello!
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>Mengdi Xu</title>
+  
+  <meta name="author" content="Mengdi Xu">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="icon" type="image/png" href="images/cmulogo.png">
+
+  <!-- <script src=”main.js” defer></script> -->
+</head>
+
+<body>
+<!-- 
+<div class="topnav" id="myTopnav">
+  <a href="#Home">Home</a>
+  <a href="#Research">Research</a>
+  <a href="#Experience">Experience</a>
+  <a href="#Education">Education</a>
+  <a href="#Misc">Misc</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script> -->
+  <table style="width:100%;max-width:900px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr style="padding:10px">
+      <td style="padding:10px">
+
+        <section id="Home" style="padding-top:2vh;padding-bottom:1vh;">       
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr style="padding:10px">
+            <td style="padding:2.5%;width:63%;vertical-align:middle;line-height: 150%;">
+              <p style="text-align:center">
+                <name>Mengdi Xu - 徐梦迪</name>
+              </p>
+              <p>
+                I am a third-year Ph. D. student advised by <a href="https://www.meche.engineering.cmu.edu/directory/bios/zhao-ding.html">Ding Zhao</a>
+                (<a href="https://safeai-lab.github.io/">SafeAI Lab</a>) at Carnegie Mellon University.
+                I am also fortunate to work with <a href="http://www.columbia.edu/~khl2114/">Henry Lam</a>, <a href="https://aisecure.github.io/">Bo Li</a>, <a href="https://feifang.info/">Fei Fang</a> and <a href="http://people.csail.mit.edu/ganchuang/">Chuang Gan</a>.
+                My research interests lie at the interface of reinforcement learning, cognitive science and robotics.
+                I am passionate about improving robots' robustness and adaptivity, especially in human-in-the-loop multi-agent systems.
+              </p>
+              <p>
+                Before joining CMU, I received my Master degree in Robotics from <a href="https://lcsr.jhu.edu/">LCSR</a> at Johns Hopkins University, supervised by Prof. <a href="https://rpk.lcsr.jhu.edu/Publications/">Gregory S. Chirikjian</a>.
+<!--                I also worked closely with <a href="https://www.cs.jhu.edu/~rht/">Prof. Russ Taylor</a> and Prof. <a href="https://amiro.lcsr.jhu.edu/IulianIordachita/">Iulian Iordachita</a> in JHU.-->
+                I received my Bachelor of Engineering from the <a href="http://www.dae.tsinghua.edu.cn/publish/daeen/index.html">School of Vehicle and Mobility</a>
+                and Bachelor of Management from the <a href="https://www.sem.tsinghua.edu.cn/en/">School of Economics and Management</a> at Tsinghua University.
+              </p>
+              <p style="text-align:center">
+                <a href="mailto:mengdixu@andrew.cmu.edu">Email</a> &nbsp/&nbsp
+                <a href="data/CV_MengdiXu.pdf">CV (last updated: Dec 2021)</a> &nbsp/&nbsp
+<!--                <a href="data/JonBarron-bio.txt">Biography</a> &nbsp/&nbsp-->
+                <a href="https://scholar.google.com/citations?hl=zh-CN&user=A1yMyYEAAAAJ">Google Scholar</a> &nbsp/&nbsp
+                <a href="https://github.com/mxu34">Github</a>
+<!--                <a href="https://www.facebook.com/barron.jon">Facebook</a> &nbsp/&nbsp-->
+<!--                <a href="https://twitter.com/jon_barron">Twitter</a>-->
+              </p>
+            </td>
+            <td style="padding:2.5%;width:25%;max-width:25%">
+              <a href="images/profile.png"><img style="width:100%;max-width:100%" alt="profile photo" src="images/profile.png" class="hoverZoomLink"></a>
+            </td>
+          </tr>
+        </tbody></table>
+        </section>
+
+        <section id="News">
+            <h2 style="padding-bottom:1vh;"> News </h2>
+            <table style="line-height:150%" class="table table-hover table-striped">
+                <tr><td style="width:20%;">2022/06 - Our work on accelerated policy evaluation in the presence of rare events got accepted to IROS 2022!</td></tr>
+                <tr><td style="width:20%;">2022/05 - I joined MIT-IBM Watson AI Lab as a research intern.</td></tr>
+                <tr><td style="width:20%;">2022/05 - Our work on policy generalization with offline data got accepted to ICML 2022! </td></tr>
+                <tr><td style="width:20%;">2022/04 - Our work about a novel framework for robust RL got accepted to IJCAI 2022! </td></tr>
+                <tr><td style="width:20%;">2021/06 - I got accepted into the Master of Science in Machine Learning program by the Machine Learning Department at CMU. </td></tr>
+                <tr><td style="width:20%;">2021/06 - I joined Toyota Research Institute as a research intern. </td></tr>
+                <tr><td style="width:20%;">2020/09 - Our work on continual RL in nonstationary environments got accepted to NeurIPS 2020! </td></tr>
+            </table>
+        </section>
+
+        <br>
+
+        <br>
+
+        <section id="Research">
+        <h2> Selected Publications </h2>
+        <!-- <hr> -->
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+
+          <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+            <td style="padding:10px;width:20%;vertical-align:middle">
+                <img src="images/Prompt_DT_website.png" alt="hpp" style="border-style: none" width="220">
+              </td>
+              <td style="padding:10px;width:80%;vertical-align:middle">
+                <p>
+                <papertitle>Prompting Decision Transformer for Few-shot Policy Generalization</papertitle>
+                </p>
+                <strong>Mengdi Xu</strong>,
+                Yikang Shen,
+                <a href="https://shunzh.github.io/"><author>Shun Zhang</author></a>,
+                <a href="http://jackhaha363.github.io/"><author>Yuchen Lu</author></a>,
+                <a href="https://www.meche.engineering.cmu.edu/directory/bios/zhao-ding.html"><author>Ding Zhao</author></a>,
+                <a href="http://web.mit.edu/cocosci/josh.html"><author>Josh Tenenbaum</author></a> and
+                <a href="http://people.csail.mit.edu/ganchuang/"><author>Chuang Gan</author></a>
+                <br>
+                <em>Thirty-ninth International Conference on Machine Learning (<strong>ICML</strong>), 2022</em>
+                <br>
+                <a href="https://mxu34.github.io/PromptDT/">[webpage]</a>
+                <a href="https://arxiv.org/pdf/2206.13499.pdf">[paper]</a>
+                <a href="https://github.com/mxu34/prompt-dt">[code]</a>
+            </td>
+          </tr>
+
+          <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+            <td style="padding:10px;width:20%;vertical-align:middle">
+              <img src="images/APE.png" alt="hpp" style="border-style: none" width="220">
+            </td>
+            <td style="padding:10px;width:80%;vertical-align:middle">
+              <p>
+                <papertitle>Accelerated Policy Evaluation: Learning Adversarial Environments with Adaptive Importance Sampling
+                </papertitle>
+              </p>
+              <strong>Mengdi Xu</strong>,
+              <a href="https://peidehuang.github.io/"><author>Peide Huang</author></a>,
+              Fengpei Li,
+              <a href="https://jiachengzhuml.github.io/"><author>Jiacheng Zhu</author></a>,
+              Xuewei Qi,
+              Kentaro Oguchi,
+              <a href="https://sites.google.com/view/zyhuang"><author>Zhiyuan Huang</author></a>,
+              <a href="http://www.columbia.edu/~khl2114/"><author>Henry Lam</author></a> and
+              <a href="https://www.meche.engineering.cmu.edu/directory/bios/zhao-ding.html"><author>Ding Zhao</author></a>
+              <br>
+              <em>IEEE/RSJ International Conference on Intelligent Robots and Systems (<strong>IROS</strong>), 2022</em>
+              <br>
+              <em>Abridged in ICLR 2021 Workshop in Security and Safety in Machine Learning Systems.</em>
+              <br>
+              <a href="https://arxiv.org/pdf/2106.10566.pdf">[arXiv]</a>
+              <a href="data/ape.txt">[bibtex]</a>             
+              <a href="https://aisecure-workshop.github.io/aml-iclr2021/">[workshop]</a> 
+              <a href="data/APE_ICLR2021Workshop_poster.pdf">[poster]</a>
+            </td>
+          </tr>
+
+          <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+            <td style="padding:10px;width:20%;vertical-align:middle">
+              <img src="images/stack_front.png" alt="hpp" style="border-style: none" width="220">
+            </td>
+            <td style="padding:10px;width:80%;vertical-align:middle">
+              <p>
+                <papertitle>Robust Reinforcement Learning as a Stackelberg Game via Adaptively-Regularized Adversarial Training
+                </papertitle>
+              </p>
+              <a href="https://peidehuang.github.io/"><author>Peide Huang</author></a>,
+              <strong>Mengdi Xu</strong>,
+              <a href="https://feifang.info/"><author>Fei Fang</author></a> and
+              <a href="https://www.meche.engineering.cmu.edu/directory/bios/zhao-ding.html"><author>Ding Zhao</author></a>
+              <br>
+              <em>International Joint Conference on Artificial Intelligence (<strong>IJCAI</strong>), 2022</em>
+              <br>
+              <a href="https://arxiv.org/pdf/2202.09514.pdf">[arXiv]</a>
+              <a href="data/stack-rrl.txt">[bibtex]</a>
+            </td>
+          </tr>
+
+
+          <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+            <td style="padding:10px;width:20%;vertical-align:middle">
+              <img src="images/context_RL.png" alt="hpp" style="border-style: none" width="220">
+            </td>
+            <td style="padding:10px;width:80%;vertical-align:middle">
+              <p>
+                <papertitle>Context-Aware Safe Reinforcement Learning for Non-Stationary Environments
+                </papertitle>
+              </p>
+              Baiming Chen,
+              <a href="https://zuxin.me/"><author>Zuxin Liu</author></a>,
+              <a href="https://jiachengzhuml.github.io/"><author>Jiacheng Zhu</author></a>,
+              <strong>Mengdi Xu</strong>,
+              <a href="https://wenhao.pub/"><author>Wenhao Ding</author></a>,
+              Liang Li and
+              <a href="https://www.meche.engineering.cmu.edu/directory/bios/zhao-ding.html"><author>Ding Zhao</author></a>
+              <br>
+              <em>IEEE International Conference on Robotics and Automation (<strong>ICRA</strong>), 2021</em><br>
+              <a href="https://arxiv.org/pdf/2101.00531.pdf">[arXiv]</a>
+              <a href="data/context_RL.txt">[bibtex]</a>
+<!--              <b><p style="color:green">Green notes</p></b>-->
+<!--              <p>Description</p>-->
+            </td>
+          </tr>
+
+          <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+            <td style="padding:10px;width:20%;vertical-align:middle">
+              <img src="images/mbrl-gpmm.png" alt="hpp" style="border-style: none" width="220">
+            </td>
+            <td style="padding:10px;width:80%;vertical-align:middle">
+              <p>
+                <papertitle>Task-Agnostic Online Reinforcement Learning with an Infinite Mixture of Gaussian Processes
+                </papertitle>
+              </p>
+              <strong>Mengdi Xu</strong>,
+              <a href="https://wenhao.pub/"><author>Wenhao Ding</author></a>,
+              <a href="https://jiachengzhuml.github.io/"><author>Jiacheng Zhu</author></a>,
+              <a href="https://zuxin.me/"><author>Zuxin Liu</author></a>,
+              Baiming Chen and
+              <a href="https://www.meche.engineering.cmu.edu/directory/bios/zhao-ding.html"><author>Ding Zhao</author></a>
+              <br>
+              <em>Thirty-fourth Conference on Neural Information Processing Systems (<strong>NeurIPS</strong>), 2020</em><br>
+              <a href="https://papers.nips.cc/paper/2020/hash/47951a40efc0d2f7da8ff1ecbfde80f4-Abstract.html" >[video]</a>
+              <a href="https://arxiv.org/pdf/2206.11441.pdf">[arXiv]</a>
+              <a href="https://github.com/mxu34/mbrl-gpmm">[code]</a>
+              <a href="data/mbrl-gpmm.txt">[bibtex]</a>
+<!--              <b><p style="color:green">Green notes</p></b>-->
+<!--              <p>Description</p>-->
+            </td>
+          </tr>
+
+
+          <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+            <td style="padding:10px;width:20%;vertical-align:middle">
+              <img src="images/dmdpn.png" alt="hpp" style="border-style: none" width="220">
+            </td>
+            <td style="padding:10px;width:80%;vertical-align:middle">
+              <p>
+                <papertitle>Delay-Aware Model-Based Reinforcement Learning for Continuous Control</papertitle>
+              </p>
+              Baiming Chen,
+              <strong>Mengdi Xu</strong>,
+              Liang Li and
+              <a href="https://www.meche.engineering.cmu.edu/directory/bios/zhao-ding.html"><author>Ding Zhao</author></a>
+              <br>
+              <em><strong>Neurocomputing</strong>, 2021</em><br>
+              <a href="https://arxiv.org/pdf/2205.05440.pdf">[arXiv]</a>
+              <a href="https://github.com/baimingc/Delay-aware-MBRL">[code]</a>
+              <a href="data/da-mbrl.txt">[bibtex]</a>
+<!--              <b><p style="color:green">Green notes</p></b>-->
+<!--              <p>Description</p>-->
+            </td>
+          </tr>
+
+          <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+            <td style="padding:10px;width:20%;vertical-align:middle">
+              <img src="images/CMTS.png" alt="hpp" style="border-style: none" width="220">
+            </td>
+            <td style="padding:10px;width:80%;vertical-align:middle">
+              <p>
+                <papertitle>CMTS: Conditional Multiple Trajectory Synthesizer for Generating Safety-critical Driving Scenarios</papertitle>
+              </p>
+              <a href="https://wenhao.pub/"><author>Wenhao Ding</author></a>,
+              <strong>Mengdi Xu</strong> and
+              <a href="https://www.meche.engineering.cmu.edu/directory/bios/zhao-ding.html"><author>Ding Zhao</author></a>
+              <br>
+              <em>International Conference on Robotics and Automation (<strong>ICRA</strong>), 2020</em><br>
+              <a href="https://arxiv.org/pdf/1910.00099.pdf">[arXiv]</a> 
+              <a href="https://github.com/GilgameshD/ICRA2020-CMTS">[code]</a> 
+              <a href="data/cmts.txt">[bibtex]</a>
+<!--              <b><p style="color:green">Green notes</p></b>-->
+<!--              <p>Description</p>-->
+            </td>
+          </tr>
+
+          <!-- <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+            <td style="padding:10px;width:20%;vertical-align:middle">
+              <img src="images/Mosquito_Staging.png" alt="hpp" style="border-style: none" width="220">
+            </td>
+            <td style="padding:10px;width:80%;vertical-align:middle">
+              <p>
+                <papertitle>Mosquito staging apparatus for producing PfSPZ malaria vaccines</papertitle>
+              </p>
+              <strong>Mengdi Xu</strong>,
+              Shengnan Lyu,
+              Yingtian Xu,
+              Can Kocabalkanli,
+              Brian K. Chirikjian,
+              John S. Chirikjian,
+              Joshua Davis,
+              Jin Seob Kim,
+              <a href="https://amiro.lcsr.jhu.edu/IulianIordachita/">Iulian Iordachita</a>,
+              <a href="https://www.cs.jhu.edu/~rht/">Prof. Russell H. Taylor</a> and
+              <a href="https://me.jhu.edu/faculty/gregory-s-chirikjian/">Gregory S. Chirikjian</a>
+              <br>
+              <em>IEEE 15th International Conference on Automation Science and Engineering (<strong>CASE</strong>), 2019</em><br>
+              <a href="https://rpk.lcsr.jhu.edu/wp-content/uploads/2019/10/Mosquito-Staging-Apparatus-for-Producing-PfSPZ-Malaria-Vaccines.pdf">paper</a> /
+              <a href="data/Mosquito_Staging.txt">bibtex</a>
+            </td>
+          </tr> -->
+
+          <!-- <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+            <td style="padding:10px;width:20%;vertical-align:middle">
+              <img src="images/Mosquito_Vision.png" alt="hpp" style="border-style: none" width="220">
+            </td>
+            <td style="padding:10px;width:80%;vertical-align:middle">
+              <p>
+                <papertitle>Multi-Mosquito Object Detection and 2D Pose Estimation for Automation of PfSPZ Malaria Vaccine Production</papertitle>
+              </p>
+              <a href="https://hongtaowu67.github.io/">Hongtao Wu</a>,
+              Jiteng Mu,
+              Ting Da,
+              <strong>Mengdi Xu</strong>,
+              <a href="https://www.cs.jhu.edu/~rht/">Prof. Russell H. Taylor</a>,
+              <a href="https://amiro.lcsr.jhu.edu/IulianIordachita/">Iulian Iordachita</a>
+              and <a href="https://me.jhu.edu/faculty/gregory-s-chirikjian/">Gregory S. Chirikjian</a>
+              <br>
+              <em>IEEE 15th International Conference on Automation Science and Engineering (<strong>CASE</strong>), 2019</em><br>
+              <a href="https://rpk.lcsr.jhu.edu/wp-content/uploads/2019/10/Multi-Mosquito-Object-Detection-and-2D-Pose-Estimation-for-Automation-of-PfSPZ-Malaria-Vaccine-Production.pdf">paper</a> /
+              <a href="data/Mosquito_Vision.txt">bibtex</a>
+            </td>
+          </tr>
+
+          <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+            <td style="padding:10px;width:20%;vertical-align:middle">
+              <img src="images/DirectionCosine2.png" alt="hpp" style="border-style: none" width="220">
+            </td>
+            <td style="padding:10px;width:80%;vertical-align:middle">
+              <p>
+                <papertitle>Recovering a Rotation Matrix From Three Direction Cosines</papertitle>
+              </p>
+              <strong>Mengdi Xu</strong>
+              and <a href="https://me.jhu.edu/faculty/gregory-s-chirikjian/">Gregory S. Chirikjian</a>
+              <br>
+              <em>ASME 2018 International Design Engineering Technical Conferences and Computers and Information in Engineering Conference (<strong>IDETC-CIE</strong>), 2018</em><br>
+              <a href="data/DETC2018-ThreeDirectionCosine.pdf">paper</a> /
+              <a href="data/DirectionCosine.txt">bibtex</a>
+            </td>
+          </tr> -->
+
+          <!-- <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+            <td style="padding:10px;width:20%;vertical-align:middle">
+              <img src="images/honeybee.png" alt="hpp" style="border-style: none" width="220">
+            </td>
+            <td style="padding:10px;width:80%;vertical-align:middle">
+              <p>
+                <papertitle>Influence of hydrodynamic pressure and vein strength on the super-elasticity of honeybee wings</papertitle>
+              </p>
+              Jieliang Zhao*,
+              <strong>Mengdi Xu*</strong>
+              Youjian Liang,
+              Shaoze Yan and
+              Wendong Niu
+              <br>
+              <em><strong>Journal of insect physiology</strong>, 2018</em><br>
+              <a href="https://www.sciencedirect.com/science/article/abs/pii/S0022191018301859">paper</a> /
+              <a href="data/honeybee.txt">bibtex</a>
+            </td>
+          </tr> -->
+
+<!--          <tr onmouseout="mpi_stop()" onmouseover="mpi_start()">-->
+<!--            <td style="padding:10px;width:20%;vertical-align:middle">-->
+<!--              <div class="one">-->
+<!--                <div class="two" id='mpi_image'><img src='images/mpi_after.jpg'></div>-->
+<!--                <img src='images/mpi_before.jpg'>-->
+<!--              </div>-->
+<!--              <script type="text/javascript">-->
+<!--                function mpi_start() {-->
+<!--                  document.getElementById('mpi_image').style.opacity = "1";-->
+<!--                }-->
+
+<!--                function mpi_stop() {-->
+<!--                  document.getElementById('mpi_image').style.opacity = "0";-->
+<!--                }-->
+<!--                mpi_stop()-->
+<!--              </script>-->
+<!--            </td>-->
+<!--            <td style="padding:10px;width:80%;vertical-align:middle">-->
+<!--              <a href="https://drive.google.com/file/d/1TU5L6fnt4Kd49IUOU7aNxor5NIgdHuNG/view?usp=sharing">-->
+<!--                <papertitle>Pushing the Boundaries of View Extrapolation with Multiplane Images</papertitle>-->
+<!--              </a>-->
+<!--              <br>-->
+<!--              <a href="https://people.eecs.berkeley.edu/~pratul/">Pratul P. Srinivasan</a>, Richard Tucker,-->
+<!--              <strong>Jonathan T. Barron</strong>,-->
+<!--              <a href="http://cseweb.ucsd.edu/~ravir/">Ravi Ramamoorthi</a>,-->
+<!--              <a href="http://graphics.stanford.edu/~renng/">Ren Ng</a>,-->
+<!--              <a href="https://www.cs.cornell.edu/~snavely/">Noah Snavely</a>-->
+<!--              <br>-->
+<!--              <em>CVPR</em>, 2019 &nbsp <font color="red"><strong>(Oral Presentation, Best Paper Award Finalist)</strong></font>-->
+<!--              <br>-->
+<!--              <a href="https://drive.google.com/file/d/1GUW_n-BAn9Q4VntEA_OTHNJiHO7XfC62/view?usp=sharing">supplement</a> /-->
+<!--              <a href="https://www.youtube.com/watch?v=aJqAaMNL2m4">video</a> /-->
+<!--              <a href="data/SrinivasanCVPR2019.bib">bibtex</a>-->
+<!--              <p></p>-->
+<!--              <p>View extrapolation with multiplane images works better if you reason about disocclusions and disparity sampling frequencies.</p>-->
+<!--            </td>-->
+<!--          </tr>-->
+
+        </tbody></table>
+        </section>
+
+        <br>
+
+        <br>
+
+        <section id="Preprints" style="padding-bottom:5h;">
+            <h2> Preprints </h2>
+            <!-- <hr> -->
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        
+              <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+                <td style="padding:10px;width:20%;vertical-align:middle">
+                    <img src="images/DRO.png" alt="hpp" style="border-style: none" width="220">
+                  </td>
+                  <td style="padding:10px;width:80%;vertical-align:middle">
+                    <p>
+                    <papertitle>Group Distributionally Robust Reinforcement Learning with Hierarchical Latent Variables
+                    </papertitle>
+                    </p>
+                    <strong>Mengdi Xu</strong>,
+                    <a href="https://peidehuang.github.io/"><author>Peide Huang</author></a>,
+                    Visak Kumar,
+                    Jielin Qiu,
+                    Chao Fang,
+                    Kuan-Hui Lee,
+                    Xuewei Qi,
+                    <a href="http://www.columbia.edu/~khl2114/"><author>Henry Lam</author></a>,
+                    <a href="https://aisecure.github.io/"><author>Bo Li</author></a> and
+                    <a href="https://www.meche.engineering.cmu.edu/directory/bios/zhao-ding.html"><author>Ding Zhao</author></a>
+                    <br>
+                    <em>Preprint, under review</em>
+                    <br>
+                    <em>Abridged in ICML 2022 workshop on Principles of Distribution Shift.</em>
+                    <br>
+                    <em>Abridged in ICRA 2022 the Fresh Perspectives on the Future of Autonomous Driving Workshop.</em>
+                    <a href="DRO_RL/Group_DR_RL.pdf">[paper]</a>
+
+                    <!-- <a >[arXiv]</a>
+                    <a >[bibtex]</a> -->
+                </td>
+              </tr>
+    
+              <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+                <td style="padding:10px;width:20%;vertical-align:middle">
+                  <img src="images/FOT_arm.png" alt="hpp" style="border-style: none" width="220">
+                </td>
+                <td style="padding:10px;width:80%;vertical-align:middle">
+                  <p>
+                    <papertitle>Functional Optimal Transport: Map Estimation and Domain Adaptation for Functional data
+                    </papertitle>
+                  </p>
+                  <a href="https://jiachengzhuml.github.io/"><author>Jiacheng Zhu</author></a>,
+                  <a href="http://www-personal.umich.edu/~aritra/"><author>Aritra Guha</author></a>,
+                  <strong>Mengdi Xu</strong>,
+                  Yingchen Ma,
+                  Rayleigh Lei,
+                  Vincenzo Loffredo,
+                  <a href="http://dept.stat.lsa.umich.edu/~xuanlong/"><author>XuanLong Nguyen</author></a> and
+                  <a href="https://www.meche.engineering.cmu.edu/directory/bios/zhao-ding.html"><author>Ding Zhao</author></a>
+                  <br>
+                  <em>Preprint, under review</em><br>
+                  <em>Abridged in AAAI OT-SDM 2022 workshop (<strong>spotlight</strong>)</em><br>
+                  <a href="https://arxiv.org/pdf/2102.03895.pdf">[arXiv]</a> 
+                  <a href="https://github.com/VersElectronics/FOT">[code]</a> 
+                  <a href="data/fot.txt">[bibtex]</a>
+    <!--              <b><p style="color:green">Green notes</p></b>-->
+    <!--              <p>Description</p>-->
+                </td>
+              </tr>
+    
+              <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+                <td style="padding:10px;width:20%;vertical-align:middle">
+                  <img src="images/da-marl.png" alt="hpp" style="border-style: none" width="220">
+                </td>
+                <td style="padding:10px;width:80%;vertical-align:middle">
+                  <p>
+                    <papertitle>Delay-Aware Multi-Agent Reinforcement Learning</papertitle>
+                  </p>
+                  Baiming Chen,
+                  <strong>Mengdi Xu</strong>,
+                  <a href="https://zuxin.me/"><author>Zuxin Liu</author></a>,
+                  Liang Li and
+                  <a href="https://www.meche.engineering.cmu.edu/directory/bios/zhao-ding.html"><author>Ding Zhao</author></a>
+                  <br>
+                  <em>Preprint, under review</em><br>
+                  <a href="https://arxiv.org/pdf/2205.05441.pdf">[arXiv]</a>
+                  <a href="https://github.com/baimingc/delay-aware-MARL">[code]</a>
+                  <a href="data/da-marl.txt">[bibtex]</a>
+    <!--              <b><p style="color:green">Green notes</p></b>-->
+    <!--              <p>Description</p>-->
+                </td>
+              </tr>
+
+    
+            </tbody></table>
+        </section>
+
+        <br>
+        <br>
+
+        <section id="Teaching">
+        <h2 style="padding-bottom:1vh;">Teaching</h2>
+        <table style="line-height:150%" class="table table-hover table-striped">
+          <!-- <tr><td style="width:20%;"><strong>Research Intern</strong> in Machine Learning, Toyota Research Institute, Summer 2021</td></tr> -->
+          <tr><td style="width:20%;">Teaching Assistant of Modern Control, Carnegie Mellon University, Fall 2021</td></tr>
+          <!-- <tr><td style="width:20%;"><strong>Assistant to Associate Chief Editor</strong>, Robotica, 2018.9-2019.5</td></tr> -->
+          <tr><td style="width:20%;">Teaching Assistant of EN.530.646 Robot Devices, Kinematics, Dynamics, and Control, Johns Hopkins University, Spring 2019</td></tr>
+          <tr><td style="width:20%;">Teaching Assistant of EN.530.645 Kinematics, Johns Hopkins University, Fall 2018</td></tr>
+        </table> 
+        </section>
+        
+        <br>
+
+        <br>
+
+        <!-- <section id="Education">
+          <h2>Education</h2>
+          <br>
+          
+          <table style="line-height:150%" class="table table-hover table-striped">
+            <tr><td style="width:25%;">2019 - Now</td><td style="width:80%;">Carnegie Mellon University. Ph.D. in Mechanical Engineering</td></tr>
+            <tr><td style="width:25%;">2021 - Now</td><td style="width:80%;">Carnegie Mellon University. M.S. in Machine Learning</td></tr>
+            <tr><td style="width:25%;">2017 - 2019</td><td style="width:80%;">Johns Hopkins Univesity. M.S.E. in Robotics</td></tr>
+            <tr><td style="width:25%;">2013 - 2017</td><td style="width:80%;">Tsinghua University. B.S. Management</td></tr>
+            <tr><td style="width:25%;">2013 - 2017</td><td style="width:80%;">Tsinghua University. B.S. Automotive Engineering</td></tr>
+          </table>
+        </section> -->
+
+        <section id="Service" >
+            <h2 style="padding-bottom:1vh;">Service</h2>    
+            <table style="line-height:150%" class="table table-hover table-striped">
+              <tr><td style="width:25%;">Conference Reviewer: NeurIPS 2022, ICML 2022, AAAI 2022 </td></tr>
+            </table>
+        </section>
+
+        <br>
+
+        <br>
+
+
+        <section id="Misc">
+          <h2 style="padding-bottom:1vh;">Misc</h2>
+          <table style="line-height:150%" class="table table-hover table-striped">
+            <tr><td style="width:25%;"><a href="https://youtu.be/8PUd6e4jm2Y"><author>Autonomous Quality Inspection System</author></a></td></tr>
+            <tr><td style="width:25%;"><a href="https://www.youtube.com/watch?v=YDTHSN-5QHw&t=74s"><author>UR5 Maze Solver</author></a></td></tr>
+          </table>
+        </section>
+
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>
+
