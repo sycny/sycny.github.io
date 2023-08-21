@@ -1,2 +1,2 @@
 # sycny.github.io
-Hello
+The website: https://sycny.github.io/
