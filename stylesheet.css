@@ -148,3 +148,46 @@ h2{
   margin:0;
   color: #333333;
 }
+
+.research-areas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.research-area {
+  flex-basis: calc(33.33% - 20px);
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.research-area h4 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.research-area ul {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+.research-area li {
+  margin-bottom: 5px;
+}
+
+.research-area i {
+  margin-right: 5px;
+  color: #4A90E2;
+}
+
+@media (max-width: 768px) {
+  .research-area {
+    flex-basis: 100%;
+  }
+}
