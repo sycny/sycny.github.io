@@ -14,7 +14,95 @@
   <!--<link rel="icon" type="image/svg+xml" href="images/University_of_Georgia_seal.svg">-->
   <link rel="alternate icon" type="image/png" href="images/UGA_CS.png">
 
-  <!-- <script src=”main.js” defer></script> -->
+ <style>
+    /* Add this CSS to your <head> or inside a <style> tag before this section */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+    body {
+        font-family: 'Inter', sans-serif;
+        color: #333;
+    }
+    name {
+        font-size: 2.5em; /* 40px */
+        font-weight: 700;
+        color: #111;
+    }
+    .bio-text p {
+        font-size: 1.125em; /* 18px */
+        line-height: 1.7;
+        color: #444;
+    }
+    .bio-text strong {
+        font-weight: 500;
+        color: #0056b3; /* A nice blue for emphasis */
+    }
+    .highlights-title {
+        font-size: 1.75em; /* 28px */
+        font-weight: 700;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 10px;
+    }
+    .highlights-list {
+        list-style: none;
+        padding-left: 0;
+    }
+    .highlights-list > li {
+        margin-bottom: 25px;
+    }
+    .highlight-category {
+        font-size: 1.25em; /* 20px */
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+    .highlight-description {
+        font-size: 1em; /* 16px */
+        color: #666;
+        margin-bottom: 12px;
+    }
+    .highlight-projects {
+        list-style-type: '✓  '; /* Custom bullet point */
+        padding-left: 20px;
+        font-size: 1em;
+    }
+    .highlight-projects li {
+        margin-bottom: 8px;
+    }
+    .job-cta {
+        background-color: #f0f7ff;
+        border: 1px solid #d0e7ff;
+        border-radius: 8px;
+        padding: 20px;
+        margin-top: 30px;
+        text-align: center;
+        font-size: 1.1em;
+        font-weight: 500;
+    }
+    .social-links {
+        text-align: center;
+        margin-top: 30px;
+    }
+    .social-links a {
+        font-size: 1em;
+        font-weight: 500;
+        color: #555;
+        text-decoration: none;
+        margin: 0 12px;
+        transition: color 0.2s ease;
+    }
+    .social-links a:hover {
+        color: #0056b3;
+    }
+    .profile-pic {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 12px; /* Softer corners */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+</style>
+
+
 </head>
 
 <body>
@@ -44,52 +132,56 @@
     <tr style="padding:10px">
       <td style="padding:10px">
 
-  <section id="Home" style="padding-top:4vh; padding-bottom:2vh;">
-      <table style="width:100%; border:0; border-spacing:0; border-collapse:separate; margin-right:auto; margin-left:auto;">
+  <section id="Home" style="padding: 5vh 0;">
+      <table style="width:100%; max-width: 1100px; border:0; border-spacing:0; border-collapse:separate; margin-right:auto; margin-left:auto;">
           <tbody>
-              <tr style="padding:10px">
-                  <td style="padding:2.5%; width:63%; vertical-align:middle;">
-                      <p style="text-align:center;">
+              <tr>
+                  <td style="padding:20px; width:70%; vertical-align:top;" class="bio-text">
+                      <p style="text-align:left; margin-bottom: 30px;">
                           <name>Yucheng Shi - 史淯城</name>
                       </p>
-                      <p style="line-height: 1.6;">
-                          I am a Ph.D. Candidate at the University of Georgia, advised by Prof. <a href="https://ninghaohello.github.io/">Ninghao Liu</a>. My research is dedicated to a central theme: **advancing the capabilities and performance of large-scale AI models.**
-                          <br><br>
-                          I believe that the key to unlocking the next generation of AI lies in the data we use. Following a <strong>data-centric</strong> philosophy, my work develops innovative methods to enhance model outcomes by systematically improving data quality at both the training and inference stages. This approach allows me to build more powerful, capable, and reliable AI systems.
+                      <p>
+                          I am a Ph.D. Candidate at the University of Georgia, advised by Prof. <a href="https://ninghaohello.github.io/">Ninghao Liu</a>. My research is dedicated to a central theme: <strong>advancing the capabilities and performance of large-scale AI models</strong>, with a focus on <strong>LLMs, MLLMs, and Agentic AI</strong>.
                       </p>
-                      
-                      <heading>Research Highlights</heading>
-                      <ul style="line-height: 1.6; margin-left: 20px; list-style-position: outside;">
+                      <p>
+                          I believe the key to unlocking the next generation of AI lies in the data we use. Following a <strong>data-centric</strong> philosophy, my work develops innovative methods to enhance model outcomes by systematically improving data quality. This approach allows me to build more powerful, capable, and reliable AI systems.
+                      </p>
+  
+                      <h2 class="highlights-title">Research Highlights</h2>
+                      <ul class="highlights-list">
                           <li>
-                              <strong>Advanced Data Provisioning:</strong> Pioneering methods to supply models with high-quality data.
-                              <ul>
+                              <div class="highlight-category">Advanced Data Provisioning</div>
+                              <div class="highlight-description">Pioneering methods to supply models with high-quality, targeted information.</div>
+                              <ul class="highlight-projects">
                                   <li>Synthetic Data: <a href="https://openreview.net/forum?id=lHbLpwbEyt">Self-synthesized multimodal data</a>, <a href="https://arxiv.org/abs/2303.12175">Zero-shot image purification</a>.</li>
                                   <li>Retrieval-Augmented Generation (RAG): <a href="https://arxiv.org/abs/2403.19631">Retrieval Augmented Editing</a>, <a href="https://arxiv.org/abs/2309.16035">Medical RAG</a>.</li>
                               </ul>
                           </li>
-                          <li style="margin-top: 10px;">
-                              <strong>Model Optimization & Behavior:</strong> Leveraging internal mechanics for targeted improvements.
-                              <ul>
-                                  <li>Explainability for Performance: <a href="https://arxiv.org/abs/2403.08946">XAI Usage with LLMs</a>, <a href="https://arxiv.org/abs/2310.10708">Explanation of Deep Visual Neurons</a>, <a href="https://arxiv.org/abs/2305.14582">XAI with Time Series</a>.</li>
-                                  <li>Application to Foundation Models: <a href="https://arxiv.org/abs/2408.11848">Post-training Radiology Llama 70B</a>.</li>
+                          <li>
+                              <div class="highlight-category">Foundation Model Adaptation & Control</div>
+                              <div class="highlight-description">Fine-tuning and steering models for specialized, high-performance tasks.</div>
+                              <ul class="highlight-projects">
+                                  <li>Agentic AI & Post-Training: Developing cutting-edge <a href="#">Mobile GUI Agents</a> using RL-based methods and advanced post-training techniques.</li>
+                                  <li>Explainability for Performance: Using XAI as a diagnostic tool to guide targeted model improvements (<a href="https://arxiv.org/abs/2403.08946">LLMs</a>, <a href="https://arxiv.org/abs/2310.10708">Neurons</a>, <a href="https://arxiv.org/abs/2305.14582">Time Series</a>).</li>
+                                  <li>Domain-Specific Adaptation: Successfully post-trained a <a href="https://arxiv.org/abs/2408.11848">Llama 70B for Radiology</a> on millions of medical reports.</li>
                               </ul>
                           </li>
                       </ul>
-  
-                      <p style="background-color:#f8f9fa; border-left: 4px solid #e74c3c; padding: 15px; margin-top: 20px; font-weight:bold; text-align:center;">
-                          I am actively seeking full-time Research Scientist or Applied Scientist roles starting December 2025. Let's connect if my work aligns with your team's goals!
-                      </p>
-                      
-                      <p style="text-align:center; margin-top:20px;">
-                          <a href="mailto:yucheng.shi@uga.edu" style="margin: 0 10px;"><i class="fa fa-envelope"></i> Email</a>
-                          <a href="https://sycny.github.io/Yucheng_sShi_CV_2025Summer.pdf" target="_blank" style="margin: 0 10px;"><i class="fa fa-file-text-o"></i> CV</a>
-                          <a href="https://scholar.google.co.uk/citations?user=rIFRHvIAAAAJ&hl=en&oi=ao" style="margin: 0 10px;"><i class="fa fa-graduation-cap"></i> Google Scholar</a>
-                          <a href="https://github.com/sycny" style="margin: 0 10px;"><i class="fa fa-github"></i> GitHub</a>
-                          <a href="https://www.linkedin.com/in/yucheng-shi/" style="margin: 0 10px;"><i class="fa fa-linkedin"></i> LinkedIn</a>
-                      </p>
                   </td>
-                  <td style="padding:2.5%; width:25%; max-width:25%">
-                      <a href="images/info.jpeg"><img style="width:100%; max-width:100%; border-radius: 8px;" alt="info photo" src="images/info.jpeg" class="hoverZoomLink"></a>
+  
+                  <td style="padding:20px; width:30%; vertical-align:top;">
+                      <img class="profile-pic" alt="profile photo" src="images/info.jpeg">
+                      <div class="job-cta">
+                          I am seeking full-time Research / Applied Scientist roles starting Dec 2025. Let's connect if my work aligns with your team's goals!
+                      </div>
+                      <div class="social-links">
+                          <a href="mailto:yucheng.shi@uga.edu"><i class="fa fa-envelope"></i> Email</a>
+                          <a href="YOUR_CV_LINK_HERE" target="_blank"><i class="fa fa-file-text-o"></i> CV</a>
+                          <br style="display: block; margin-top: 10px;">
+                          <a href="https://scholar.google.co.uk/citations?user=rIFRHvIAAAAJ&hl=en&oi=ao"><i class="fa fa-graduation-cap"></i> Scholar</a>
+                          <a href="https://github.com/sycny"><i class="fa fa-github"></i> GitHub</a>
+                          <a href="https://www.linkedin.com/in/yucheng-shi/"><i class="fa fa-linkedin"></i> LinkedIn</a>
+                      </div>
                   </td>
               </tr>
           </tbody>
