@@ -1,0 +1,589 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+  <title>Yucheng Shi</title>
+  
+  <meta name="author" content="Yucheng Shi">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <!--<link rel="icon" type="image/svg+xml" href="images/University_of_Georgia_seal.svg">-->
+  <link rel="alternate icon" type="image/png" href="images/UGA_CS.png">
+
+ <style>
+    /* Add this CSS to your <head> or inside a <style> tag before this section */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+    body {
+        font-family: 'Inter', sans-serif;
+        color: #333;
+    }
+    name {
+        font-size: 2.5em; /* 40px */
+        font-weight: 700;
+        color: #111;
+    }
+    .bio-text p {
+        font-size: 1.125em; /* 18px */
+        line-height: 1.7;
+        color: #444;
+    }
+    .bio-text strong {
+        font-weight: 500;
+        color: #0056b3; /* A nice blue for emphasis */
+    }
+    .highlights-title {
+        font-size: 1.75em; /* 28px */
+        font-weight: 700;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 10px;
+    }
+    .highlights-list {
+        list-style: none;
+        padding-left: 0;
+    }
+    .highlights-list > li {
+        margin-bottom: 25px;
+    }
+    .highlight-category {
+        font-size: 1.25em; /* 20px */
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+    .highlight-description {
+        font-size: 1em; /* 16px */
+        color: #666;
+        margin-bottom: 12px;
+    }
+    .highlight-projects {
+        list-style-type: '✓  '; /* Custom bullet point */
+        padding-left: 20px;
+        font-size: 1em;
+    }
+    .highlight-projects li {
+        margin-bottom: 8px;
+    }
+    .job-cta {
+        background-color: #f0f7ff;
+        border: 1px solid #d0e7ff;
+        border-radius: 8px;
+        padding: 20px;
+        margin-top: 30px;
+        text-align: center;
+        font-size: 1.1em;
+        font-weight: 500;
+    }
+    .social-links {
+        text-align: center;
+        margin-top: 30px;
+    }
+    .social-links a {
+        font-size: 1em;
+        font-weight: 500;
+        color: #555;
+        text-decoration: none;
+        margin: 0 12px;
+        transition: color 0.2s ease;
+    }
+    .social-links a:hover {
+        color: #0056b3;
+    }
+    .profile-pic {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 12px; /* Softer corners */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+</style>
+
+
+</head>
+
+<body>
+<!-- 
+<div class="topnav" id="myTopnav">
+  <a href="#Home">Home</a>
+  <a href="#Research">Research</a>
+  <a href="#Experience">Experience</a>
+  <a href="#Education">Education</a>
+  <a href="#Misc">Misc</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script> -->
+  <table style="width:90%; max-width:1100px; border:0px; border-spacing:0px; border-collapse:separate; margin:auto;"><tbody>
+    <tr style="padding:10px">
+      <td style="padding:10px">
+
+  <section id="Home" style="padding: 5vh 0;">
+   <table style="width:90%; max-width: 1100px; border:0; border-spacing:0; border-collapse:separate; margin-right:auto; margin-left:auto;">
+      <tbody>
+        <tr>
+          <td style="padding:20px; width:70%; vertical-align:top;">
+            <p style="text-align:left; margin-bottom: 30px;">
+              <name>Yucheng Shi - 史淯城</name>
+            </p>
+            <p>
+              I am a fourth-year Ph.D. candidate at the University of Georgia, advised by Prof. <a href="https://ninghaohello.github.io/">Ninghao Liu</a>. My research focuses on <strong>data-centric</strong> approaches and <strong>post-training</strong> techniques to improve the performance and reliability of <strong>Multimodal Language Models and Agentic AI</strong> systems.
+            </p>
+            <!-- <p>
+              I believe the key to unlocking the next generation of AI lies in the data we use. Following a <strong>data-centric</strong> philosophy, my work focuses on developing innovative methods to enhance model performance by improving input data quality, ultimately leading to more capable and trustworthy AI systems.
+            </p> -->
+  
+            <h2 class="highlights-title" style="margin-top: 20px;">Research Highlights</h2>
+            <ul class="highlights-list">
+              <li>
+                <div class="highlight-category">Advanced Data Provisioning</div>
+                <div class="highlight-description">Pioneering methods to supply models with high-quality, targeted information.</div>
+                <ul class="highlight-projects">
+                  <li>Synthetic Data for Performance: <a href="https://openreview.net/forum?id=lHbLpwbEyt">Self-synthesized Multimodal QA</a>, <a href="https://sycny.github.io/">Useful GUI Agent Tasks Creation</a>.</li>
+                  <li>Synthetic Data for Safety:  <a href="https://arxiv.org/abs/2303.12175">Zero-shot Image Purification</a>.</li>
+                  <li>Retrieval-Augmented Generation (RAG): <a href="https://arxiv.org/abs/2403.19631">Retrieval Augmented Editing</a>, <a href="https://arxiv.org/abs/2309.16035">Medical RAG</a>.</li>
+                </ul>
+              </li>
+              <li>
+                <div class="highlight-category">Foundation Model Adaptation & Control</div>
+                <div class="highlight-description">Tuning and steering models for specialized, high-performance tasks.</div>
+                <ul class="highlight-projects">
+                  <li>Agentic AI & Post-Training: <a href="https://openreview.net/forum?id=lHbLpwbEyt">Cognitive MLLMs by Rejection Sampling</a>, <a href="#">Mobile GUI Agents by Online RL</a>, </li>
+                  <li>Explainability for Control: <a href="https://arxiv.org/abs/2506.00698"> Explaination guided Image Editing</a>, <a href="https://openreview.net/forum?id=lHbLpwbEyt"> Usable XAI with LLMs</a>
+                  <li>Domain-Specific Adaptation: <a href="https://arxiv.org/abs/2408.11848">Radiology Llama 70B</a> post-trained on millions of medical reports.</li>
+                </ul>
+              </li>
+            </ul>
+  
+            <p style="background-color:#f8f9fa; border-left: 4px solid #e74c3c; padding: 15px; margin-top: 30px; font-weight:bold; text-align:center;">
+              I am actively seeking full-time Research Scientist or Applied Scientist roles starting December 2025. Let's connect if my work aligns with your team's goals!
+            </p>
+            
+            <p style="text-align:center; margin-top:20px;">
+              <a href="mailto:yucheng.shi@uga.edu" style="margin: 0 10px;"><i class="fa fa-envelope"></i> Email</a>
+              <a href="https://sycny.github.io/Yucheng_Shi_CV_2025Summer.pdf" target="_blank" style="margin: 0 10px;"><i class="fa fa-file-text-o"></i> CV</a>
+              <a href="https://scholar.google.co.uk/citations?user=rIFRHvIAAAAJ&hl=en&oi=ao" style="margin: 0 10px;"><i class="fa fa-graduation-cap"></i> Scholar</a>
+              <a href="https://github.com/sycny" style="margin: 0 10px;"><i class="fa fa-github"></i> GitHub</a>
+              <a href="https://www.linkedin.com/in/yucheng-shi/" style="margin: 0 10px;"><i class="fa fa-linkedin"></i> LinkedIn</a>
+            </p>
+            </td>
+  
+          <td style="padding:20px; width:30%; vertical-align:top;">
+            <img class="profile-pic" alt="profile photo" src="images/info.jpeg" style="width:100%; max-width:100%; border-radius: 8px; margin-top: 40px;">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+        <section id="News">
+            <h2 style="padding-bottom:1vh;"> News </h2>
+            <table style="line-height:150%" class="table table-hover table-striped">
+                <tr><td style="width:20%;">2025/05 - Starting my internship at Tencent AI Lab (Seattle), advised by Dr. <a href="https://wyu97.github.io/">Wenhao Yu</a>. </td></tr>
+                <tr><td style="width:20%;">2025/05 - One paper accepted by ICML 2025. </td></tr>
+                <tr><td style="width:20%;">2025/04 - Check out our new survey on <a href="https://arxiv.org/abs/2503.23434">Trustworhty GUI agents</a> and its <a href="https://github.com/sycny/Awesome-Trustworthy-GUI-Agents">Github Repo</a>.</td></tr>
+                <tr><td style="width:20%;">2025/04 - I received <a href="https://grad.uga.edu/scholarship-and-fellowship-awards-2023/sec-emerging-scholars-and-graduate-school-dissertation-completion-awards-2023/">Dissertation Completion Award Assistantship</a> for 2025-2026! </td></tr>
+                <tr><td style="width:20%;">2025/03 - I passed my Comprehensive Exam! </td></tr>
+                <tr><td style="width:20%;">2025/01 - Three papers accepted by ICLR 2025. </td></tr>
+                <tr><td style="width:20%;">2024/11 - Our paper received </strong> <a href="https://computing.uga.edu/news/stories/2024/dr-ninghao-liu-wins-distinguished-paper-award">Distinguished Paper Award</a> from AMIA 2024. </td></tr>
+                <tr><td style="width:20%;">2024/07 - One paper accepted by CIKM 2024. </td></tr>
+                <!-- <tr><td style="width:20%;">2024/06 - One paper accepted by AMIA 2024. </td></tr> -->
+                <tr><td style="width:20%;">2024/06 - Give one tutorial about XAI and its medical application on <a href="https://ieeeichi2024.github.io/program.html">ICHI 2024</a>. </td></tr>
+                <tr><td style="width:20%;">2024/05 - Starting my remote internship at Harvard Medical School, advised by Dr. <a href="https://xiangli-shaun.github.io/index.html">Xiang Li</a>. </td></tr>
+                <!-- <tr><td style="width:20%;">2024/01 - One paper accepted by TheWenConf 2024. </td></tr> -->
+                <!-- <tr><td style="width:20%;">2023/10 - One paper accepted by AAAI 2024. </td></tr> -->
+                <!-- <tr><td style="width:20%;">2023/09 - One paper accepted by ICDMW 2023. </td></tr> -->
+                <tr><td style="width:20%;">2023/09 - One paper accepted by NeurIPS 2023. </td></tr> 
+                <!-- <tr><td style="width:20%;">2023/08 - One paper accepted by CIKM 2023. </td></tr> -->
+                <!-- <tr><td style="width:20%;">2023/06 - One paper accepted by ECML-PKDD 2023. </td></tr> -->
+                <tr><td style="width:20%;">2022/01 - I joined the DLGA lab at the University of Georgia as a research assistant. </td></tr>
+            </table>
+        </section>
+
+        <br>
+
+        <br>
+
+        <section id="Research">
+        <h2> Publications </h2>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <tr>
+        <td style="text-indent:20px;width:100%;vertical-align:middle">
+        <p>
+          *Equal contribution.
+        </p>
+        </td>
+        </tr>
+        </tbody></table>
+
+        <h3 style="text-indent:20px;color:#4A90E2;border-bottom:2px solid #4A90E2;padding-bottom:5px;">Synthetic and Generative Data</h3>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <!-- Paper entries for Interpretable AI System Design -->
+          <!-- (Paper entries omitted for brevity) -->
+
+        <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+          <td style="padding:10px;width:20%;vertical-align:middle">
+              <img src="images/CORTEX.png" alt="hpp" style="border-style: none" width="220">
+              </td>
+            <td style="padding:10px;width:80%;vertical-align:middle">
+              <p>
+              <papertitle>CORTEX: Concept-Oriented Token Explanation in Vector-Quantized Generative Model</papertitle>
+              </p>
+              Tianze Yang*, <strong>Yucheng Shi*</strong>, Mengnan Du, Xuansheng Wu, Qiaoyu Tan, Jin Sun, Ninghao Liu.
+              <br>
+              <em><strong>(ICML)</strong>, Forty-second International Conference on Machine Learning, 2025.</strong></em>
+              <br>
+              <a href="https://arxiv.org/abs/2506.00698">[Paper]</a>
+              <a href="https://github.com/YangTianze009/CORTEX">[Code]</a>
+        
+        <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+            <td style="padding:10px;width:20%;vertical-align:middle">
+                <img src="images/ICLR_2025.png" alt="hpp" style="border-style: none" width="220">
+              </td>
+              <td style="padding:10px;width:80%;vertical-align:middle">
+                <p>
+                <papertitle>Enhancing Cognition and Explainability of Multimodal Foundation Models with Self-Synthesized Data</papertitle>
+                </p>
+                <strong>Yucheng Shi</strong>, Quanzheng Li, Jin Sun, Xiang Li, Ninghao Liu.
+                <br>
+                <em><strong>(ICLR)</strong>, International Conference on Learning Representations, 2025.</em>
+                <br>
+                <a href="https://openreview.net/forum?id=lHbLpwbEyt">[Paper]</a>
+                <a href="https://github.com/sycny/SelfSynthX">[Code]</a>
+                <a href="https://huggingface.co/YuchengShi">[Model]</a>
+                
+          <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+            <td style="padding:10px;width:20%;vertical-align:middle">
+                <img src="images/ZIP.png" alt="hpp" style="border-style: none" width="220">
+              </td>
+              <td style="padding:10px;width:80%;vertical-align:middle">
+                <p>
+                <papertitle>Black-box Backdoor Defense via Zero-shot Image Purification</papertitle>
+                </p>
+                <strong>Yucheng Shi</strong>, Mengnan Du, Xuansheng Wu, Zihan Guan, Jin Sun, Ninghao Liu.
+                <br>
+                <em><strong>(NeurIPS)</strong>, Conference on Neural Information Processing Systems, 2023.</em>
+                <br>
+                <a href="https://arxiv.org/abs/2303.12175">[Paper]</a>
+                <a href=" https://github.com/sycny/ZIP">[Code]</a> 
+                
+        </tbody></table>
+          
+        <h3 style="text-indent:20px;color:#8E44AD;border-bottom:2px solid #8E44AD;padding-bottom:5px;">Retrieval Augmented Generation</h3>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <!-- Paper entries for Interpretable AI System Design -->
+          <!-- (Paper entries omitted for brevity) -->
+          <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+            <td style="padding:10px;width:20%;vertical-align:middle">
+                <img src="images/SearchRAG.png" alt="hpp" style="border-style: none" width="220">
+              </td>
+              <td style="padding:10px;width:80%;vertical-align:middle">
+                <p>
+                <papertitle>SearchRAG: Can Search Engines Be Helpful for LLM-based Medical Question Answering?</papertitle>
+                </p>
+                <strong>Yucheng Shi</strong>, Tianze Yang, Canyu Chen, Quanzheng Li, Tianming Liu, Xiang Li, Ninghao Liu.
+                <br>
+                <em><strong>(arXiv)</strong>, 2025.</em>
+                <br>
+                <a href="https://arxiv.org/abs/2502.13233">[Paper]</a>
+                
+                
+          <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+            <td style="padding:10px;width:20%;vertical-align:middle">
+                <img src="images/CIKM2025.png" alt="hpp" style="border-style: none" width="220">
+              </td>
+              <td style="padding:10px;width:80%;vertical-align:middle">
+                <p>
+                <papertitle>Retrieval-Enhanced Knowledge Editing for Multi-Hop Question Answering in Language Models</papertitle>
+                </p>
+                <strong>Yucheng Shi</strong>, Qiaoyu Tan, Xuansheng Wu, Shaochen Zhong, Kaixiong Zhou, Ninghao Liu.
+                <br>
+                <em><strong>(CIKM)</strong>, ACM International Conference on Information and Knowledge Management, 2024.</em>
+                <br>
+                <a href="https://arxiv.org/abs/2403.19631">[Paper]</a>
+                <a href="https://github.com/sycny/RAE">[Code]</a> 
+                <a href="https://sycny.github.io/assets/RAE.pdf">[Slides]</a>
+
+          <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+            <td style="padding:10px;width:20%;vertical-align:middle">
+                <img src="images/mededit.png" alt="hpp" style="border-style: none" width="220">
+              </td>
+              <td style="padding:10px;width:80%;vertical-align:middle">
+                <p>
+                <papertitle>MKRAG: Medical Knowledge Retrieval Augmented Generation for Medical Question Answering</papertitle>
+                </p>
+                <strong>Yucheng Shi*</strong>, Shaochen Xu*, Tianze Yang*, Zhengliang Liu, Tianming Liu, Quanzheng Li, Xiang Li, Ninghao Liu.
+                <br>
+                <em><strong>(AMIA)</strong>, American Medical Informatics Association Annual Symposium, 2024.</em>
+                <br>
+                <a href="https://arxiv.org/abs/2309.16035">[Paper]</a>
+                <a href="https://github.com/sycny/MKRAG">[Code]</a> 
+                <a style="color:#e74c3c; font-weight:bold;"> [Distinguished Paper Award]</a> 
+                
+          <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+            <td style="padding:10px;width:20%;vertical-align:middle">
+                <img src="images/R_MQUAKE.png" alt="hpp" style="border-style: none" width="220">
+              </td>
+              <td style="padding:10px;width:80%;vertical-align:middle">
+                <p>
+                <papertitle>MQuAKE-Remastered: Multi-Hop Knowledge Editing Can Only Be Advanced with Reliable Evaluations</papertitle>
+                </p>
+                Shaochen Zhong, Yifan Lu, Lize Shao, Bhargav Bhushanam, Xiaocong Du, Yixin Wan, <strong>Yucheng Shi</strong>, Daochen Zha, Yiwei Wang, Ninghao Liu, Kaixiong Zhou, Shuai Xu, Kai-Wei Chang, Louis Feng, Vipin Chaudhary, Xia Hu
+                <br>
+                <em><strong>(ICLR)</strong>, International Conference on Learning Representations, 2025.</em>
+                <br>
+                <a href="https://openreview.net/forum?id=m9wG6ai2Xk">[Paper]</a>
+              
+                
+        </tbody></table>
+
+        <h3 style="text-indent:20px;color: #C0392B;border-bottom: 2px solid #C0392B;padding-bottom:5px;">Medical Foundation Models</h3>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+             <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">  
+              <td style="padding:10px;width:20%;vertical-align:middle">
+                  <img src="images/EchoPulse.png" alt="hpp" style="border-style: none" width="220">
+                </td>
+                <td style="padding:10px;width:80%;vertical-align:middle">
+                  <p>
+                  <papertitle>ECHOPulse: ECG Controlled Echocardio-gram Video Generation</papertitle>
+                  </p>
+                   Yiwei Li, Sekeun Kim, Zihao Wu, Hanqi Jiang, Yi Pan, Pengfei Jin, Sifan Song, <strong>Yucheng Shi</strong>, Xiaowei Yu, Tianze Yang, Tianming Liu, Quanzheng Li, Xiang Li
+                  <br>
+                    <em><strong>(ICLR)</strong>, International Conference on Learning Representations, 2025.</em>
+                  <br>
+                  <a href="https://arxiv.org/abs/2410.03143">[Paper]</a>
+
+            <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">  
+              <td style="padding:10px;width:20%;vertical-align:middle">
+                  <img src="images/MGHllama.png" alt="hpp" style="border-style: none" width="220">
+                </td>
+                <td style="padding:10px;width:80%;vertical-align:middle">
+                  <p>
+                  <papertitle>MGH Radiology Llama: A Llama 3 70B Model for Radiology</papertitle>
+                  </p>
+                   <strong>Yucheng Shi</strong>, Peng Shu, Zhengliang Liu, Zihao Wu, Quanzheng Li, Tianming Liu, Ninghao Liu, Xiang Li
+                  <br>
+                    <em><strong>(Preprints)</strong>, Tech Report, 2024.</em>
+                  <br>
+                  <a href="https://arxiv.org/abs/2408.11848">[Paper]</a>
+ 
+        </tbody></table>
+          
+        <h3 style="text-indent:20px;color: #34495E;border-bottom: 2px solid #34495E;padding-bottom:5px;">Graph Self-supervised Learning</h3>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+                <td style="padding:10px;width:20%;vertical-align:middle">
+                  <img src="images/gigamae.png" alt="hpp" style="border-style: none" width="220">
+                </td>
+                <td style="padding:10px;width:80%;vertical-align:middle">
+                  <p>
+                  <papertitle>GiGaMAE: Generalizable Graph Masked Autoencoder via Collaborative Latent Space Reconstruction</papertitle>
+                  </p>
+                  <strong>Yucheng Shi</strong>, Yushun Dong, Qiaoyu Tan, Jundong Li, Ninghao Liu.
+                  <br>
+                  <em><strong>(CIKM)</strong>, ACM International Conference on Information and Knowledge Management, 2023.</em>
+                  <br>
+                  <a href="https://dl.acm.org/doi/10.1145/3583780.3614894">[Paper]</a>
+                  <a href="https://github.com/sycny/GiGaMAE">[Code]</a> 
+             <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+              <td style="padding:10px;width:20%;vertical-align:middle">
+                  <img src="images/ENGAGE.png" alt="hpp" style="border-style: none" width="220">
+                </td>
+                <td style="padding:10px;width:80%;vertical-align:middle">
+                  <p>
+                  <papertitle>ENGAGE: Explanation Guided Data Augmentation for Graph Representation Learning</papertitle>
+                  </p>
+                  <strong>Yucheng Shi</strong>, Kaixiong Zhou, Ninghao Liu.
+                  <br>
+                  <em><strong>(ECML-PKDD)</strong>, European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases, 2023.</em>
+                  <br>
+                  <a href="http://arxiv.org/abs/2307.01053">[Paper]</a>
+                  <a href="https://github.com/sycny/ENGAGE">[Code]</a> 
+        </tbody></table>
+                
+        <h3 style="text-indent:20px;color:#F39C12;border-bottom:2px solid #F39C12;padding-bottom:5px;">Explainability and its utilization</h3> 
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <!-- Paper entries for Explainability and its utilization -->
+          <!-- (Paper entries omitted for brevity) -->
+
+              <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+               <td style="padding:10px;width:20%;vertical-align:middle">
+                  <img src="images/CUA_tree.png" alt="hpp" style="border-style: none" width="220">
+                </td>
+                <td style="padding:10px;width:80%;vertical-align:middle">
+                  <p>
+                  <papertitle>Towards Trustworthy GUI Agents: A Survey</papertitle>
+                  </p>
+                  <strong>Yucheng Shi</strong>, Yucheng Shi, Wenhao Yu, Wenlin Yao, Wenhu Chen, Ninghao Liu
+                  <br>
+                  <em><strong>(Preprints)</strong></em>
+                  <br>
+                  <a href="https://arxiv.org/abs/2503.23434">[Paper]</a>
+                  <a href="https://github.com/sycny/Awesome-Trustworthy-GUI-Agents">[Code]</a>
+
+
+
+            <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+              <td style="padding:10px;width:20%;vertical-align:middle">
+                  <img src="images/Quantifying_Multilingual.png" alt="hpp" style="border-style: none" width="220">
+                </td>
+                <td style="padding:10px;width:80%;vertical-align:middle">
+                  <p>
+                  <papertitle>Quantifying Multilingual Performance of Large Language Models Across Languages</papertitle>
+                  </p>
+                  Zihao Li, <strong>Yucheng Shi</strong>, Zirui Liu, Fan Yang, Ali Payani, Ninghao Liu, Mengnan Du.	
+                  <br>
+                  <em><strong>(AAAI)</strong>, Association for the Advancement of Artificial Intelligence, 2025.</em>
+                  <br>
+                  <a href="https://arxiv.org/abs/2404.11553">[Paper]</a>
+                  <a href="https://github.com/lizh9885/Language-Ranker">[Code]</a>
+                  
+        
+           <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+            <td style="padding:10px;width:20%;vertical-align:middle">
+                <img src="images/usableai.png" alt="hpp" style="border-style: none" width="220">
+              </td>
+              <td style="padding:10px;width:80%;vertical-align:middle">
+                <p>
+                <papertitle>Usable XAI: 10 Strategies Towards Exploiting Explainability in the LLM Era</papertitle>
+                </p>
+                Xuansheng Wu*, Haiyan Zhao*, Yaochen Zhu*, <strong>Yucheng Shi*</strong>, Fan Yang, Tianming Liu, Xiaoming Zhai, Wenlin Yao, Jundong Li, Mengnan Du, Ninghao Liu.	
+                <br>
+                <em><strong>(Preprints)</strong></em>
+                <br>
+                <a href="https://arxiv.org/abs/2403.08946">[Paper]</a>
+                <a href="https://github.com/JacksonWuxs/UsableXAI_LLM">[Code]</a>                          
+                
+           <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+            <td style="padding:10px;width:20%;vertical-align:middle">
+                <img src="images/aaai_abstract.png" alt="hpp" style="border-style: none" width="220">
+              </td>
+              <td style="padding:10px;width:80%;vertical-align:middle">
+                <p>
+                <papertitle>Automated Natural Language Explanation of Deep Visual Neurons with Large Models</papertitle>
+                </p>
+                Chenxu Zhao, Wei Qian, <strong>Yucheng Shi</strong>, Mengdi Huai, Ninghao Liu.	
+                <br>
+                <em><strong>(AAAI)</strong>, Association for the Advancement of Artificial Intelligence, Student abstract, 2024.</em>
+                <br>
+                <a href="https://arxiv.org/abs/2310.10708">[Paper]</a>
+                
+            <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+              <td style="padding:10px;width:20%;vertical-align:middle">
+                  <img src="images/ChatGraph.png" alt="hpp" style="border-style: none" width="220">
+                </td>
+                <td style="padding:10px;width:80%;vertical-align:middle">
+                  <p>
+                  <papertitle>ChatGraph: Interpretable Text Classification by Converting ChatGPT Knowledge to Graphs</papertitle>
+                  </p>
+                  <strong>Yucheng Shi*</strong>, Hehuan Ma*, Wenliang Zhong*, Qiaoyu Tan, Gengchen Mai, Xiang Li, Tianming Liu, Junzhou Huang.
+                  <br>
+                  <em><strong>(ICDMW)</strong>, International Workshop on Learning with Knowledge Graphs @ ICDM2023, 2023.</em>
+                  <br>
+                  <a href="https://arxiv.org/abs/2305.03513">[Paper]</a>
+                  <a href="https://github.com/sycny/ChatGraph">[Code]</a> 
+          
+           <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+            <td style="padding:10px;width:20%;vertical-align:middle">
+                <img src="images/time_series_model.png" alt="hpp" style="border-style: none" width="220">
+              </td>
+              <td style="padding:10px;width:80%;vertical-align:middle">
+                <p>
+                <papertitle>Interpretation of Time-Series Deep Models: A Survey</papertitle>
+                </p>
+                Ziqi Zhao*, <strong>Yucheng Shi*</strong>, Shushan Wu*, Fan Yang, Wenzhan Song, Ninghao Liu.
+                <br>
+                  <strong>(Preprints)</strong><!--<em><strong>(ICDMW)</strong>, International Workshop on Learning with Knowledge Graphs @ ICDM2023, 2023.</em>-->
+                <br>
+                <a href="https://arxiv.org/abs/2305.14582">[Paper]</a>
+                <a href="https://github.com/astrajoan/sequential-learning-interpretation">[Code]</a> 
+                
+        
+        </tbody></table>
+          
+        
+        <h3 style="text-indent:20px;color: #1ABC9C;border-bottom: 2px solid #1ABC9C;padding-bottom:5px;">Recommendation System</h3>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">  
+              <td style="padding:10px;width:20%;vertical-align:middle">
+                  <img src="images/llm_rec.png" alt="hpp" style="border-style: none" width="220">
+                </td>
+                <td style="padding:10px;width:80%;vertical-align:middle">
+                  <p>
+                  <papertitle>Could Small Language Models Serve as Recommenders? Towards Data-centric Cold-Start Recommendation</papertitle>
+                  </p>
+                   Xuansheng Wu, Huachi Zhou, <strong>Yucheng Shi</strong>, Wenlin Yao, Xiao Huang, Ninghao Liu.
+                  <br>
+                    <em><strong>(WWW)</strong>, The Web Conference, 2024.</em>
+                  <br>
+                  <a href="https://arxiv.org/abs/2306.17256">[Paper]</a>
+                  <a href="https://github.com/JacksonWuxs/PromptRec">[Code]</a> 
+        </tbody></table>
+        </section>
+
+        <br>
+                
+        <section id="Teaching">
+        <h2 style="padding-bottom:1vh;">Teaching</h2>
+        <table style="line-height:150%" class="table table-hover table-striped">
+          <tr><td style="width:20%;">Teaching Assistant of CSCI4380/6380 Data Mining and CSCI4370/6370 Database Management, University of Georgia, Spring 2024</td></tr>
+          <tr><td style="width:20%;">Teaching Assistant of CSCI4380/6380 Data Mining (Two Sessions), University of Georgia, Fall 2023</td></tr>
+          <tr><td style="width:20%;">Teaching Assistant of CSCI4380/6380 Data Mining, University of Georgia, Spring 2023</td></tr>
+          <tr><td style="width:20%;">Teaching Assistant of CSCI4360/6360 Data Science, University of Georgia, Fall 2022</td></tr>
+        </table> 
+        </section>
+        
+        <br>
+
+        <section id="Miscellaneous">
+          <h2 style="padding-bottom:1vh;">Miscellaneous</h2>
+          <div class="row">
+            <div class="col-md-8">
+              <p>
+                Outside of research, I enjoy photography as a way to capture and appreciate life's small, beautiful moments. My camera helps me celebrate the everyday joys that surround us.              
+                <a href="https://www.flickr.com/photos/157896273@N06/" class="btn btn-primary" target="_blank">
+                <i class="fa fa-flickr"></i> My Flickr.
+                </a>
+            </div>
+          </div>
+        </section>
+
+        <br>
+
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JQ677DWRHK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JQ677DWRHK');
+</script>
