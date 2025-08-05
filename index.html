@@ -100,91 +100,65 @@
         border-radius: 12px; /* Softer corners */
         box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
-    .Experience h2 {
-        padding-bottom: 1vh;
-        border-bottom: 2px solid #eee; /* 举个例子，加个下划线 */
-        margin-bottom: 20px; /* 和下面的内容拉开距离 */
+
+    /* --- Experience Section Timeline Layout --- */
+    
+    /* 每个实习经历项的容器 */
+    .experience-item {
+        display: flex; /* 关键：启用Flexbox布局，实现左右分栏 */
+        align-items: center; /* 关键：让左侧的Logo和右侧的详情在垂直方向上居中对齐 */
+        /* 如果你希望Logo和顶部对齐，而不是居中，可以使用 align-items: flex-start; */
+        margin-bottom: 50px; /* 增加每个实习经历之间的间距 */
+        position: relative; /* 用于创建时间线竖线 */
     }
     
-    /* 控制所有公司Logo的样式 */
-    .company-icon img {
-        width: 48px;         /* 设定统一的宽度 */
-        height: 48px;        /* 设定统一的高度 */
-        object-fit: contain; /* 保证Logo比例正确，不会被拉伸变形 */
-        margin-right: 15px;
+    /* 左侧的Logo列 */
+    .experience-logo-column {
+        flex-basis: 100px; /* 设定Logo列的固定宽度为100px */
+        flex-shrink: 0; /* 防止在屏幕缩小时，Logo列被压缩 */
+        margin-right: 30px; /* Logo列和右侧详情列之间的间距 */
+        text-align: center; /* 让Logo在自己的列里居中 */
     }
-    .experience-header {
-        display: flex; /* 使用flex布局，让图标和文字水平对齐 */
-        align-items: center; /* 垂直居中对齐 */
+    
+    /* Logo图片本身的样式 */
+    .experience-logo-column img {
+        width: 64px; /* 将Logo的宽度放大到64px */
+        height: 64px; /* 高度也设为64px，保持方形 */
+        object-fit: contain; /* 保证Logo图片比例不变 */
+        background-color: #fff; /* 给Logo加一个白色背景，避免被时间线穿过 */
+        border: 2px solid #e0e0e0; /* 给Logo加一个浅灰色边框 */
+        border-radius: 50%; /* 关键：将Logo变为圆形 */
+        padding: 8px; /* 在Logo和圆形边框之间增加一些内边距 */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 添加一点细微的阴影，增加立体感 */
     }
-      /* Research Experience Styles */
-    .experience-item {
-        border-left: 3px solid #e74c3c;
-        padding-left: 20px;
-        margin-bottom: 30px;
-        position: relative;
+    
+    /* 右侧的详情列 */
+    .experience-details-column {
+        flex-grow: 1; /* 让详情列占据所有剩余的可用空间 */
     }
-    .experience-header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 8px;
+    
+    
+    /* --- （可选）添加时间线竖线效果 --- */
+    .experience-item::before {
+        content: '';
+        position: absolute;
+        left: 50px; /* = Logo列宽度(100px)的一半，让竖线从Logo中心穿过 */
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background-color: #e0e0e0; /* 竖线的颜色 */
+        z-index: -1; /* 将竖线置于内容下方 */
     }
-    .company-icon {
-        width: 32px;
-        height: 32px;
-        margin-right: 12px;
-        border-radius: 6px;
-        background: #f8f9fa;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 18px;
+    
+    /* （可选）让最后一条经历没有向下的竖线，看起来更干净 */
+    .experience-item:last-child::before {
+        height: 50px; /* 只保留上半部分的一点线头 */
     }
-    .netflix-icon {
-        background: #e50914;
-        color: white;
-    }
-    .tencent-icon {
-        background: #00a6fb;
-        color: white;
-    }
-    .harvard-icon {
-        background: #a51c30;
-        color: white;
-    }
-    .experience-title {
-        font-size: 1.2em;
-        font-weight: 700;
-        color: #2c3e50;
-    }
-    .experience-company {
-        font-size: 1.1em;
-        font-weight: 600;
-        color: #34495e;
-        margin-bottom: 4px;
-    }
-    .experience-duration {
-        font-size: 0.95em;
-        color: #7f8c8d;
-        font-style: italic;
-    }
-    .experience-mentor {
-        font-size: 0.95em;
-        color: #7f8c8d;
-        margin-bottom: 8px;
-    }
-    .experience-description {
-        font-size: 1em;
-        color: #555;
-        line-height: 1.6;
-    }
-    .experience-description ul {
-        margin: 8px 0;
-        padding-left: 20px;
-    }
-    .experience-description li {
-        margin-bottom: 6px;
-    }
+    
+    /* （可选）你可以为不同的公司设置不同的边框颜色 */
+    .experience-item:nth-child(1) .experience-logo-column img { border-color: #E50914; /* Netflix Red */ }
+    .experience-item:nth-child(2) .experience-logo-column img { border-color: #00A4FF; /* Tencent Blue */ }
+    .experience-item:nth-child(3) .experience-logo-column img { border-color: #A51C30; /* Harvard Crimson */ }
 </style>
 
 
@@ -239,7 +213,7 @@
                 <div class="highlight-description">Developing intelligent agents and advanced post-training techniques for next-generation AI systems.</div>
                 <ul class="highlight-projects">
                   <li>Mobile GUI Agents: <a href="https://arxiv.org/abs/2507.05720">Online RL for Mobile GUI Automation</a>, <a href="https://arxiv.org/abs/2503.23434">Trustworthy GUI Agents Survey</a>.</li>
-                  <li>Multimodal Post-Training: <a href="https://openreview.net/forum?id=lHbLpwbEyt">Self-Synthesized Data for Cognitive Enhancement</a>, <a href="https://openreview.net/forum?id=lHbLpwbEyt">Rejection Sampling for MLLMs</a>.</li>
+                  <li>Multimodal Post-Training: <a href="https://openreview.net/forum?id=lHbLpwbEyt">Self-Synthesized Data for Cognitive Enhancement</a>.</li>
                   <li>Domain Adaptation: <a href="https://arxiv.org/abs/2408.11848">MGH Radiology Llama 70B</a> with 6.5M+ medical reports post-training.</li>
                 </ul>
               </li>
@@ -249,7 +223,6 @@
                 <ul class="highlight-projects">
                   <li>Medical RAG: <a href="https://arxiv.org/abs/2502.13233">Search Engine Integration for Medical QA</a>, <a href="https://arxiv.org/abs/2309.16035">Medical Knowledge RAG</a>.</li>
                   <li>Knowledge Editing: <a href="https://arxiv.org/abs/2403.19631">Retrieval-Enhanced Multi-Hop QA</a> for dynamic knowledge updates.</li>
-                  <li>Synthetic Query Generation: Retrieval with <a href="https://arxiv.org/abs/2502.13233">search-engine-friendly queries</a>. </li>
                 </ul>
               </li>
               <li>
@@ -311,62 +284,56 @@
         <br>
 
         <section id="Experience">
-            <h2 style="padding-bottom:1vh;">Research Experience</h2>
+            <h2>Research Experience</h2>
             
             <div class="experience-item">
-                <div class="experience-header">
-                    <div class="company-icon">
-                        <img src="images/icons/Netflix.png" alt="Netflix Logo">
-                    </div>
-                    <div>
-                        <div class="experience-company">Netflix</div>
-                        <div class="experience-title">Machine Learning Research Internship (Upcoming)</div>
-                    </div>
+                <div class="experience-logo-column">
+                    <img src="images/icons/Netflix.png" alt="Netflix Logo">
                 </div>
-                <div class="experience-duration">September 2025 - December 2025</div>
-                <div class="experience-description">
-                    Will work on content recommendation with LLMs.
+                <div class="experience-details-column">
+                    <div class="experience-company">Netflix</div>
+                    <div class="experience-title">Machine Learning Research Internship (Upcoming)</div>
+                    <div class="experience-duration">September 2025 - December 2025</div>
+                    <div class="experience-description">
+                        Will work on content recommendation with LLMs.
+                    </div>
                 </div>
             </div>
-
+        
             <div class="experience-item">
-                <div class="experience-header">
-                    <div class="company-icon">
-                        <img src="images/icons/Tencent.png" alt="Netflix Logo">
-                    </div>
-                    <div>
-                        <div class="experience-company">Tencent AI Lab (Seattle)</div>
-                        <div class="experience-title">Research Scientist Intern</div>
-                    </div>
+                <div class="experience-logo-column">
+                    <img src="images/icons/Tencent.png" alt="Tencent AI Lab Logo">
                 </div>
-                <div class="experience-duration">May 2025 - August 2025</div>
-                <div class="experience-mentor">Mentor: Dr. <a href="https://wyu97.github.io/">Wenhao Yu</a></div>
-                <div class="experience-description">
-                    <ul>
-                        <li>Developing mobile GUI agents through online trajectory-based reinforcement learning</li>
-                        <li>Advancing multi-modal AI systems for mobile device automation and user interface understanding</li>
-                    </ul>
+                <div class="experience-details-column">
+                    <div class="experience-company">Tencent AI Lab (Seattle)</div>
+                    <div class="experience-title">Research Scientist Intern</div>
+                    <div class="experience-duration">May 2025 - August 2025</div>
+                    <div class="experience-mentor">Mentor: Dr. <a href="https://wyu97.github.io/">Wenhao Yu</a></div>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Developing mobile GUI agents through online trajectory-based reinforcement learning.</li>
+                            <li>Advancing multi-modal AI systems for mobile device automation and user interface understanding.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-
+        
             <div class="experience-item">
-                <div class="experience-header">
-                    <div class="company-icon">
-                        <img src="images/icons/Harvard.png" alt="Netflix Logo">
-                    </div>
-                    <div>
-                        <div class="experience-company">Harvard Medical School</div>
-                        <div class="experience-title">Student Researcher</div>
-                    </div>
+                <div class="experience-logo-column">
+                    <img src="images/icons/HMS.png" alt="Harvard Medical School Logo">
                 </div>
-                <div class="experience-duration">May 2024 - September 2024</div>
-                <div class="experience-mentor">Mentor: Dr. <a href="https://xiangli-shaun.github.io/index.html">Xiang Li</a></div>
-                <div class="experience-description">
-                    <ul>
-                        <li>Developed MGH Radiology LLM by further pre-training LLaMA-70B on 6.5M+ radiology reports with DeepSpeed accelerators, achieving <strong>93% improvement</strong> in ROUGE compared to original LLaMA model</li>
-                        <li>Proposed a RAG system that decomposes complex medical questions into search-engine-friendly synthetic queries for improved retrieval, enhancing LLaMA-8B's accuracy by <strong>16%</strong> on MedMCQA dataset</li>
-                        <li>Published research on medical AI applications and knowledge retrieval systems</li>
-                    </ul>
+                <div class="experience-details-column">
+                    <div class="experience-company">Harvard Medical School</div>
+                    <div class="experience-title">Student Researcher</div>
+                    <div class="experience-duration">May 2024 - September 2024</div>
+                    <div class="experience-mentor">Mentor: Dr. <a href="https://xiangli-shaun.github.io/index.html">Xiang Li</a></div>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Developed MGH Radiology LLM by further pre-training LLaMA-70B on 6.5M+ radiology reports...</li>
+                            <li>Proposed a RAG system that decomposes complex medical questions into search-engine-friendly...</li>
+                            <li>Published research on medical AI applications and knowledge retrieval systems.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
