@@ -82,9 +82,17 @@
     .links a:hover { color: #1a56c4; }
     .links span { color: #ddd; }
 
+    .photo-wrap {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      border-radius: 5px;
+      overflow: hidden;
+    }
     .photo {
       width: 100%;
-      border-radius: 5px;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 18%;
       display: block;
     }
 
@@ -113,7 +121,7 @@
     /* NEWS */
     .news-row {
       display: grid;
-      grid-template-columns: 88px 1fr;
+      grid-template-columns: 100px 1fr;
       gap: 0 18px;
       font-size: 15px;
       padding: 7px 0;
@@ -179,7 +187,7 @@
       <div class="name-zh">史淯城</div>
       <div class="affiliation">
         <strong>Tencent AI Lab</strong>, Seattle — Research Scientist<br>
-        University of Georgia — Ph.D. Candidate<br>
+        University of Georgia — Ph.D. in Computer Science<br>
         Advised by <a href="https://ninghaohello.github.io/">Prof. Ninghao Liu</a>
       </div>
       <p class="bio">
@@ -192,18 +200,19 @@
         <span>·</span>
         <a href="https://www.linkedin.com/in/yucheng-shi/" target="_blank">LinkedIn</a>
         <span>·</span>
-        <a href="https://scholar.google.co.uk/citations?user=rIFRHvIAAAAJ" target="_blank">Google Scholar</a>
-        <span>·</span>
         <a href="https://www.flickr.com/photos/157896273@N06/" target="_blank">Flickr</a>
       </div>
     </div>
-    <img class="photo" src="images/info.jpeg" alt="Yucheng Shi">
+    <div class="photo-wrap">
+      <img class="photo" src="pic_within_forest.PNG" alt="Yucheng Shi">
+    </div>
   </div>
 
   <!-- NEWS -->
   <section>
     <h2>News</h2>
     <div class="news-row"><span class="news-date">Feb 2026</span><span>Joined <strong>Tencent AI Lab (Seattle)</strong> full-time as Research Scientist.</span></div>
+    <div class="news-row"><span class="news-date">Jan 5, 2026</span><span>Successfully defended my Ph.D. dissertation at the University of Georgia. <span class="tag tag-award">Ph.D.</span></span></div>
     <div class="news-row"><span class="news-date">Jan 2026</span><span>Preprint: <a href="https://arxiv.org/abs/2507.05720">MobileGUI-RL</a> — online RL for mobile GUI agents. <span class="tag tag-paper">arXiv</span></span></div>
     <div class="news-row"><span class="news-date">May 2025</span><span>Papers accepted at <strong>ICML 2025</strong> and BIBM 2025. <span class="tag tag-paper">ICML</span></span></div>
     <div class="news-row"><span class="news-date">Apr 2025</span><span>Received <a href="https://grad.uga.edu/scholarship-and-fellowship-awards-2023/">Dissertation Completion Award Assistantship</a> for 2025–2026. <span class="tag tag-award">Award</span></span></div>
@@ -285,10 +294,4 @@
       <div class="pub-title">MKRAG: Medical Knowledge Retrieval Augmented Generation for Medical Question Answering</div>
       <div class="pub-authors"><strong>Yucheng Shi*</strong>, Shaochen Xu*, Tianze Yang*, Zhengliang Liu, Tianming Liu, Quanzheng Li, Xiang Li, Ninghao Liu</div>
       <div class="pub-meta"><em>AMIA 2024</em> &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2309.16035">Paper</a> &nbsp;·&nbsp; <a href="https://github.com/sycny/MKRAG">Code</a> &nbsp;<span class="award">Distinguished Paper Award</span></div>
-    </div>
-
-  </section>
-
-</div>
-</body>
-</html>
+    </d
