@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yucheng Shi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 300;
+      background: #fff;
+      color: #222;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    a { color: #1a56c4; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 32px 100px;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 28px;
+      margin-bottom: 56px;
+      font-size: 15px;
+    }
+    nav a { color: #444; }
+    nav a:hover { color: #1a56c4; text-decoration: none; }
+
+    /* PROFILE */
+    .profile {
+      display: grid;
+      grid-template-columns: 1fr 180px;
+      gap: 48px;
+      align-items: start;
+      margin-bottom: 56px;
+    }
+
+    h1 {
+      font-family: 'Lora', serif;
+      font-weight: 400;
+      font-size: 2rem;
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+    .name-zh {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      color: #888;
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+    }
+    .affiliation {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 20px;
+      line-height: 1.65;
+    }
+    .affiliation strong { color: #222; font-weight: 500; }
+
+    .bio { font-size: 15.5px; color: #333; margin-bottom: 22px; }
+    .bio strong { font-weight: 500; color: #222; }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 18px;
+      font-size: 14.5px;
+    }
+    .links a { color: #555; }
+    .links a:hover { color: #1a56c4; }
+    .links span { color: #ddd; }
+
+    .photo {
+      width: 100%;
+      border-radius: 5px;
+      display: block;
+    }
+
+    /* SECTIONS */
+    section { margin-bottom: 50px; }
+
+    h2 {
+      font-family: 'Lora', serif;
+      font-weight: 500;
+      font-size: 1.12rem;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    h2 a {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: #888;
+    }
+    h2 a:hover { color: #1a56c4; text-decoration: none; }
+
+    /* NEWS */
+    .news-row {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 0 18px;
+      font-size: 15px;
+      padding: 7px 0;
+      border-bottom: 1px solid #f4f4f4;
+      color: #333;
+    }
+    .news-date { color: #aaa; font-size: 13.5px; padding-top: 2px; }
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      padding: 1px 7px;
+      border-radius: 2px;
+      vertical-align: middle;
+      margin-left: 5px;
+      font-weight: 500;
+    }
+    .tag-award { background: #fff8ed; color: #b45309; }
+    .tag-paper { background: #eff6ff; color: #1d4ed8; }
+
+    /* EXPERIENCE */
+    .exp-item { margin-bottom: 20px; }
+    .exp-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px; }
+    .exp-company { font-weight: 500; font-size: 15.5px; }
+    .exp-date { font-size: 13.5px; color: #999; }
+    .exp-role { font-size: 14.5px; color: #666; margin-bottom: 4px; }
+    .exp-detail { font-size: 14.5px; color: #666; padding-left: 12px; margin-top: 4px; }
+    .exp-detail li { list-style: none; margin-bottom: 2px; }
+    .exp-detail li::before { content: '– '; color: #ccc; }
+
+    /* SELECTED PUBS */
+    .pub-item { padding: 11px 0; border-bottom: 1px solid #f4f4f4; }
+    .pub-title { font-size: 15.5px; color: #222; margin-bottom: 3px; line-height: 1.5; }
+    .pub-authors { font-size: 13.5px; color: #888; margin-bottom: 4px; }
+    .pub-authors strong { color: #555; font-weight: 500; }
+    .pub-meta { font-size: 13.5px; color: #aaa; }
+    .pub-meta a { color: #888; font-size: 13.5px; }
+    .pub-meta a:hover { color: #1a56c4; }
+    .pub-meta em { color: #555; font-style: normal; font-weight: 400; }
+    .award { color: #b45309; }
+    .downloads { color: #15803d; }
+
+    @media (max-width: 600px) {
+      .profile { grid-template-columns: 1fr; }
+      .photo { width: 130px; }
+      h1 { font-size: 1.65rem; }
+      nav { gap: 18px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="publications.html">Publications</a>
+    <a href="https://scholar.google.co.uk/citations?user=rIFRHvIAAAAJ" target="_blank">Scholar</a>
+    <a href="https://sycny.github.io/Yucheng_Shi_Resume_Fall_2025.pdf" target="_blank">CV</a>
+  </nav>
+
+  <div class="profile">
+    <div>
+      <h1>Yucheng Shi</h1>
+      <div class="name-zh">史淯城</div>
+      <div class="affiliation">
+        <strong>Tencent AI Lab</strong>, Seattle — Research Scientist<br>
+        University of Georgia — Ph.D. Candidate<br>
+        Advised by <a href="https://ninghaohello.github.io/">Prof. Ninghao Liu</a>
+      </div>
+      <p class="bio">
+        My research focuses on <strong>Agent Reinforcement Learning</strong> and <strong>Self-Evolving AI</strong> — building agents that autonomously improve through environmental interaction and self-generated experience.
+      </p>
+      <div class="links">
+        <a href="mailto:yucheng.shi@uga.edu">Email</a>
+        <span>·</span>
+        <a href="https://github.com/sycny" target="_blank">GitHub</a>
+        <span>·</span>
+        <a href="https://www.linkedin.com/in/yucheng-shi/" target="_blank">LinkedIn</a>
+        <span>·</span>
+        <a href="https://scholar.google.co.uk/citations?user=rIFRHvIAAAAJ" target="_blank">Google Scholar</a>
+        <span>·</span>
+        <a href="https://www.flickr.com/photos/157896273@N06/" target="_blank">Flickr</a>
+      </div>
+    </div>
+    <img class="photo" src="images/info.jpeg" alt="Yucheng Shi">
+  </div>
+
+  <!-- NEWS -->
+  <section>
+    <h2>News</h2>
+    <div class="news-row"><span class="news-date">Feb 2026</span><span>Joined <strong>Tencent AI Lab (Seattle)</strong> full-time as Research Scientist.</span></div>
+    <div class="news-row"><span class="news-date">Jan 2026</span><span>Preprint: <a href="https://arxiv.org/abs/2507.05720">MobileGUI-RL</a> — online RL for mobile GUI agents. <span class="tag tag-paper">arXiv</span></span></div>
+    <div class="news-row"><span class="news-date">May 2025</span><span>Papers accepted at <strong>ICML 2025</strong> and BIBM 2025. <span class="tag tag-paper">ICML</span></span></div>
+    <div class="news-row"><span class="news-date">Apr 2025</span><span>Received <a href="https://grad.uga.edu/scholarship-and-fellowship-awards-2023/">Dissertation Completion Award Assistantship</a> for 2025–2026. <span class="tag tag-award">Award</span></span></div>
+    <div class="news-row"><span class="news-date">Mar 2025</span><span>Passed my Comprehensive Exam.</span></div>
+    <div class="news-row"><span class="news-date">Jan 2025</span><span>Three papers accepted at <strong>ICLR 2025</strong>. <span class="tag tag-paper">ICLR</span></span></div>
+    <div class="news-row"><span class="news-date">Nov 2024</span><span>MKRAG received <a href="https://computing.uga.edu/news/stories/2024/dr-ninghao-liu-wins-distinguished-paper-award">Distinguished Paper Award</a> at AMIA 2024. <span class="tag tag-award">Award</span></span></div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section>
+    <h2>Experience</h2>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-company">Tencent AI Lab, Seattle</span>
+        <span class="exp-date">Feb 2026 – Present</span>
+      </div>
+      <div class="exp-role">Research Scientist &nbsp;·&nbsp; Mentor: Dr. <a href="https://wyu97.github.io/">Wenhao Yu</a></div>
+      <div class="exp-detail"><li>Agent RL and self-evolving AI.</li></div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-company">Netflix</span>
+        <span class="exp-date">Sep – Dec 2025</span>
+      </div>
+      <div class="exp-role">ML Research Intern &nbsp;·&nbsp; Dr. <a href="https://www.linkedin.com/in/ying-li-94016850/">Ying Li</a>, Dr. <a href="https://scholar.google.com/citations?user=S-9e-WwAAAAJ">Yu Wang</a></div>
+      <div class="exp-detail"><li>Content recommendation with large language models.</li></div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-company">Tencent AI Lab, Seattle</span>
+        <span class="exp-date">May – Aug 2025</span>
+      </div>
+      <div class="exp-role">Research Scientist Intern &nbsp;·&nbsp; Dr. <a href="https://wyu97.github.io/">Wenhao Yu</a></div>
+      <div class="exp-detail">
+        <li>MobileGUI-RL: online RL for mobile GUI agent automation.</li>
+        <li>Multimodal AI for mobile UI understanding.</li>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-company">Harvard Medical School</span>
+        <span class="exp-date">May – Sep 2024</span>
+      </div>
+      <div class="exp-role">Student Researcher &nbsp;·&nbsp; Dr. <a href="https://xiangli-shaun.github.io/">Xiang Li</a></div>
+      <div class="exp-detail">
+        <li>Post-trained LLaMA-3 70B on 6.5M+ radiology reports.</li>
+        <li>Built SearchRAG for medical question answering.</li>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELECTED PAPERS -->
+  <section>
+    <h2>Selected Publications <a href="publications.html">full list →</a></h2>
+
+    <div class="pub-item">
+      <div class="pub-title">Enhancing Cognition and Explainability of Multimodal Foundation Models with Self-Synthesized Data</div>
+      <div class="pub-authors"><strong>Yucheng Shi</strong>, Quanzheng Li, Jin Sun, Xiang Li, Ninghao Liu</div>
+      <div class="pub-meta"><em>ICLR 2025</em> &nbsp;·&nbsp; <a href="https://openreview.net/forum?id=lHbLpwbEyt">Paper</a> &nbsp;·&nbsp; <a href="https://github.com/sycny/SelfSynthX">Code</a> &nbsp;·&nbsp; <a href="https://huggingface.co/YuchengShi">Model</a> &nbsp;<span class="downloads">5k+ HF downloads</span></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">CORTEX: Concept-Oriented Token Explanation in Vector-Quantized Generative Models</div>
+      <div class="pub-authors">Tianze Yang*, <strong>Yucheng Shi*</strong>, Mengnan Du, Xuansheng Wu, Qiaoyu Tan, Jin Sun, Ninghao Liu</div>
+      <div class="pub-meta"><em>ICML 2025</em> &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2506.00698">Paper</a> &nbsp;·&nbsp; <a href="https://github.com/YangTianze009/CORTEX">Code</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">Black-box Backdoor Defense via Zero-shot Image Purification</div>
+      <div class="pub-authors"><strong>Yucheng Shi</strong>, Mengnan Du, Xuansheng Wu, Zihan Guan, Jin Sun, Ninghao Liu</div>
+      <div class="pub-meta"><em>NeurIPS 2023</em> &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2303.12175">Paper</a> &nbsp;·&nbsp; <a href="https://github.com/sycny/ZIP">Code</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">MKRAG: Medical Knowledge Retrieval Augmented Generation for Medical Question Answering</div>
+      <div class="pub-authors"><strong>Yucheng Shi*</strong>, Shaochen Xu*, Tianze Yang*, Zhengliang Liu, Tianming Liu, Quanzheng Li, Xiang Li, Ninghao Liu</div>
+      <div class="pub-meta"><em>AMIA 2024</em> &nbsp;·&nbsp; <a href="https://arxiv.org/abs/2309.16035">Paper</a> &nbsp;·&nbsp; <a href="https://github.com/sycny/MKRAG">Code</a> &nbsp;<span class="award">Distinguished Paper Award</span></div>
+    </div>
+
+  </section>
+
+</div>
+</body>
+</html>

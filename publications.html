@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications — Yucheng Shi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 300;
+      background: #fff;
+      color: #222;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    a { color: #1a56c4; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 32px 100px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 28px;
+      margin-bottom: 56px;
+      font-size: 15px;
+    }
+    nav a { color: #444; }
+    nav a:hover { color: #1a56c4; text-decoration: none; }
+
+    .page-header { margin-bottom: 40px; }
+    h1 {
+      font-family: 'Lora', serif;
+      font-weight: 400;
+      font-size: 1.7rem;
+      margin-bottom: 8px;
+    }
+    .page-sub {
+      font-size: 14.5px;
+      color: #888;
+    }
+    .page-sub a { color: #888; }
+
+    /* CATEGORY */
+    .cat-block { margin-bottom: 44px; }
+    h2 {
+      font-family: 'Lora', serif;
+      font-weight: 500;
+      font-size: 1.05rem;
+      margin-bottom: 14px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid #eee;
+      color: #333;
+    }
+
+    /* PUB */
+    .pub-item { padding: 12px 0; border-bottom: 1px solid #f4f4f4; }
+    .pub-item:last-child { border-bottom: none; }
+
+    .pub-title { font-size: 15.5px; color: #222; margin-bottom: 3px; line-height: 1.5; }
+    .pub-authors { font-size: 13.5px; color: #999; margin-bottom: 5px; }
+    .pub-authors strong { color: #666; font-weight: 500; }
+    .pub-meta { font-size: 13.5px; color: #aaa; display: flex; flex-wrap: wrap; gap: 0 4px; align-items: center; }
+    .pub-meta em { color: #555; font-style: normal; font-weight: 400; }
+    .pub-meta a { color: #888; }
+    .pub-meta a:hover { color: #1a56c4; }
+    .sep { color: #ddd; }
+    .award { color: #b45309; }
+    .downloads { color: #15803d; }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="publications.html">Publications</a>
+    <a href="https://scholar.google.co.uk/citations?user=rIFRHvIAAAAJ" target="_blank">Scholar</a>
+    <a href="https://sycny.github.io/Yucheng_Shi_Resume_Fall_2025.pdf" target="_blank">CV</a>
+  </nav>
+
+  <div class="page-header">
+    <h1>Publications</h1>
+    <p class="page-sub">*Equal contribution. &nbsp; Full list on <a href="https://scholar.google.co.uk/citations?user=rIFRHvIAAAAJ" target="_blank">Google Scholar</a>.</p>
+  </div>
+
+  <!-- Agent RL & Self-Evolving -->
+  <div class="cat-block">
+    <h2>Agent RL &amp; Self-Evolving AI</h2>
+
+    <div class="pub-item">
+      <div class="pub-title">MobileGUI-RL: Advancing Mobile GUI Agent through Reinforcement Learning in Online Environment</div>
+      <div class="pub-authors"><strong>Yucheng Shi*</strong>, Wenhao Yu*, Zaitang Li, Yonglin Wang, Hongming Zhang, Ninghao Liu, Haitao Mi, Dong Yu</div>
+      <div class="pub-meta"><em>arXiv 2025</em> <span class="sep">·</span> <a href="https://arxiv.org/abs/2507.05720">Paper</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">Enhancing Cognition and Explainability of Multimodal Foundation Models with Self-Synthesized Data</div>
+      <div class="pub-authors"><strong>Yucheng Shi</strong>, Quanzheng Li, Jin Sun, Xiang Li, Ninghao Liu</div>
+      <div class="pub-meta"><em>ICLR 2025</em> <span class="sep">·</span> <a href="https://openreview.net/forum?id=lHbLpwbEyt">Paper</a> <span class="sep">·</span> <a href="https://github.com/sycny/SelfSynthX">Code</a> <span class="sep">·</span> <a href="https://huggingface.co/YuchengShi">Model</a> <span class="sep">·</span> <span class="downloads">5k+ HF downloads</span></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">MGH Radiology Llama: A Llama 3 70B Model for Radiology</div>
+      <div class="pub-authors"><strong>Yucheng Shi</strong>, Peng Shu, Zhengliang Liu, Zihao Wu, Quanzheng Li, Tianming Liu, Ninghao Liu, Xiang Li</div>
+      <div class="pub-meta"><em>Tech Report 2024</em> <span class="sep">·</span> <a href="https://arxiv.org/abs/2408.11848">Paper</a></div>
+    </div>
+  </div>
+
+  <!-- Trustworthy AI -->
+  <div class="cat-block">
+    <h2>Trustworthy &amp; Explainable AI</h2>
+
+    <div class="pub-item">
+      <div class="pub-title">CORTEX: Concept-Oriented Token Explanation in Vector-Quantized Generative Models</div>
+      <div class="pub-authors">Tianze Yang*, <strong>Yucheng Shi*</strong>, Mengnan Du, Xuansheng Wu, Qiaoyu Tan, Jin Sun, Ninghao Liu</div>
+      <div class="pub-meta"><em>ICML 2025</em> <span class="sep">·</span> <a href="https://arxiv.org/abs/2506.00698">Paper</a> <span class="sep">·</span> <a href="https://github.com/YangTianze009/CORTEX">Code</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">Towards Trustworthy GUI Agents: A Survey</div>
+      <div class="pub-authors"><strong>Yucheng Shi</strong>, Wenhao Yu, Wenlin Yao, Wenhu Chen, Ninghao Liu</div>
+      <div class="pub-meta"><em>Preprint 2025</em> <span class="sep">·</span> <a href="https://arxiv.org/abs/2503.23434">Paper</a> <span class="sep">·</span> <a href="https://github.com/sycny/Awesome-Trustworthy-GUI-Agents">Repo</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">Black-box Backdoor Defense via Zero-shot Image Purification</div>
+      <div class="pub-authors"><strong>Yucheng Shi</strong>, Mengnan Du, Xuansheng Wu, Zihan Guan, Jin Sun, Ninghao Liu</div>
+      <div class="pub-meta"><em>NeurIPS 2023</em> <span class="sep">·</span> <a href="https://arxiv.org/abs/2303.12175">Paper</a> <span class="sep">·</span> <a href="https://github.com/sycny/ZIP">Code</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">Quantifying Multilingual Performance of Large Language Models Across Languages</div>
+      <div class="pub-authors">Zihao Li, <strong>Yucheng Shi</strong>, Zirui Liu, Fan Yang, Ali Payani, Ninghao Liu, Mengnan Du</div>
+      <div class="pub-meta"><em>AAAI 2025</em> <span class="sep">·</span> <a href="https://arxiv.org/abs/2404.11553">Paper</a> <span class="sep">·</span> <a href="https://github.com/lizh9885/Language-Ranker">Code</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">Usable XAI: 10 Strategies Towards Exploiting Explainability in the LLM Era</div>
+      <div class="pub-authors">Xuansheng Wu*, Haiyan Zhao*, Yaochen Zhu*, <strong>Yucheng Shi*</strong>, Fan Yang, Tianming Liu, Xiaoming Zhai, Wenlin Yao, Jundong Li, Mengnan Du, Ninghao Liu</div>
+      <div class="pub-meta"><em>Preprint</em> <span class="sep">·</span> <a href="https://arxiv.org/abs/2403.08946">Paper</a> <span class="sep">·</span> <a href="https://github.com/JacksonWuxs/UsableXAI_LLM">Code</a></div>
+    </div>
+  </div>
+
+  <!-- RAG -->
+  <div class="cat-block">
+    <h2>Retrieval-Augmented Generation</h2>
+
+    <div class="pub-item">
+      <div class="pub-title">SearchRAG: Can Search Engines Be Helpful for LLM-based Medical Question Answering?</div>
+      <div class="pub-authors"><strong>Yucheng Shi</strong>, Tianze Yang, Canyu Chen, Quanzheng Li, Tianming Liu, Xiang Li, Ninghao Liu</div>
+      <div class="pub-meta"><em>arXiv 2025</em> <span class="sep">·</span> <a href="https://arxiv.org/abs/2502.13233">Paper</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">Retrieval-Enhanced Knowledge Editing for Multi-Hop Question Answering in Language Models</div>
+      <div class="pub-authors"><strong>Yucheng Shi</strong>, Qiaoyu Tan, Xuansheng Wu, Shaochen Zhong, Kaixiong Zhou, Ninghao Liu</div>
+      <div class="pub-meta"><em>CIKM 2024</em> <span class="sep">·</span> <a href="https://arxiv.org/abs/2403.19631">Paper</a> <span class="sep">·</span> <a href="https://github.com/sycny/RAE">Code</a> <span class="sep">·</span> <a href="https://sycny.github.io/assets/RAE.pdf">Slides</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">MKRAG: Medical Knowledge Retrieval Augmented Generation for Medical Question Answering</div>
+      <div class="pub-authors"><strong>Yucheng Shi*</strong>, Shaochen Xu*, Tianze Yang*, Zhengliang Liu, Tianming Liu, Quanzheng Li, Xiang Li, Ninghao Liu</div>
+      <div class="pub-meta"><em>AMIA 2024</em> <span class="sep">·</span> <a href="https://arxiv.org/abs/2309.16035">Paper</a> <span class="sep">·</span> <a href="https://github.com/sycny/MKRAG">Code</a> <span class="sep">·</span> <span class="award">Distinguished Paper Award</span></div>
+    </div>
+  </div>
+
+  <!-- Graph -->
+  <div class="cat-block">
+    <h2>Graph Self-Supervised Learning</h2>
+
+    <div class="pub-item">
+      <div class="pub-title">GiGaMAE: Generalizable Graph Masked Autoencoder via Collaborative Latent Space Reconstruction</div>
+      <div class="pub-authors"><strong>Yucheng Shi</strong>, Yushun Dong, Qiaoyu Tan, Jundong Li, Ninghao Liu</div>
+      <div class="pub-meta"><em>CIKM 2023</em> <span class="sep">·</span> <a href="https://dl.acm.org/doi/10.1145/3583780.3614894">Paper</a> <span class="sep">·</span> <a href="https://github.com/sycny/GiGaMAE">Code</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">ENGAGE: Explanation Guided Data Augmentation for Graph Representation Learning</div>
+      <div class="pub-authors"><strong>Yucheng Shi</strong>, Kaixiong Zhou, Ninghao Liu</div>
+      <div class="pub-meta"><em>ECML-PKDD 2023</em> <span class="sep">·</span> <a href="http://arxiv.org/abs/2307.01053">Paper</a> <span class="sep">·</span> <a href="https://github.com/sycny/ENGAGE">Code</a></div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
