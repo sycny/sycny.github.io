@@ -1,0 +1,5 @@
+.DS_Store
+
+# Junyao's note is not released yet — do not publish the local draft.
+# Remove this line once the project is public.
+writing/async-rl-staleness/

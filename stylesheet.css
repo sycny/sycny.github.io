@@ -1,193 +1,192 @@
-/* latin-ext */
-@font-face {
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAUi-qNiXg7eU0.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAXC-qNiXg7Q.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_FQftx9897sxZ.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_Gwftx9897g.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+/* Yucheng Shi — sycny.github.io */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Source Sans 3', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  background: #fff;
+  color: #222;
+  font-size: 16px;
+  line-height: 1.7;
 }
 
-a {
-  color: #196CD1;
-  text-decoration: none;
+a { color: #1a56c4; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 56px 32px 70px;
 }
 
-a:focus,
-a:hover,
-author:focus,
-author:hover {
-  color: #B908C5;
-  }
-
-body,
-td,
-th,
-tr,
-p,
-author{
-  /* font-family: 'Lato', Verdana, Calibri, sans-serif; */
-  font-family: 'Lato', Calibri, sans-serif;
-  font-size: 15px;
-  color: #777777;
-}
-
-a{
-  /* font-family: 'Lato', Verdana, Calibri, sans-serif; */
-  font-family: 'Lato', Calibri, sans-serif;
-  font-size: 15px;
-}
-
-strong {
-  font-family: 'Lato', Calibri, sans-serif;
-  font-size: 15px;
-  color: #333333;
-}
-
-heading {
-  font-family: 'Lato', Calibri, sans-serif;
-  font-size: 22px;
-  color: #333333;
-}
-
-papertitle {
-  font-family: 'Lato', Calibri, sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  color: #333333;
-}
-
-name {
-  font-family: 'Lato', Calibri, sans-serif;
-  font-size: 36px;
-  color: #333333;
-}
-
-.one {
-  width: 160px;
-  height: 160px;
-  position: relative;
-}
-
-.two {
-  width: 160px;
-  height: 160px;
-  position: absolute;
-  transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
-}
-
-.fade {
-  transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
-}
-
-span.highlight {
-  background-color: #ffffd0;
-}
-
-h2{
-  font-size: 24px;
-  margin:0;
-  color: #333333;
-}
-
-.research-areas {
+/* NAV */
+nav {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 26px;
+  margin-bottom: 52px;
+  font-size: 15px;
+}
+nav a { color: #555; }
+nav a:hover { color: #1a56c4; text-decoration: none; }
+nav a[aria-current="page"] { color: #222; font-weight: 500; }
+
+/* PROFILE */
+.profile {
+  display: grid;
+  grid-template-columns: 1fr 190px;
+  gap: 44px;
+  align-items: start;
+  margin-bottom: 54px;
+}
+
+h1 {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-size: 2rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 2px;
+}
+.name-zh {
+  font-family: 'Lora', serif;
+  color: #999;
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+.affiliation {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 18px;
+  line-height: 1.65;
+}
+.affiliation strong { color: #222; font-weight: 500; }
+
+.bio { font-size: 15.5px; color: #333; margin-bottom: 20px; }
+.bio strong { font-weight: 500; color: #222; }
+
+.links { font-size: 14.5px; }
+.links a { color: #555; }
+.links a:hover { color: #1a56c4; }
+.links span { color: #ccc; }
+
+.photo-wrap {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.photo { width: 100%; height: auto; display: block; }
+
+/* SECTIONS */
+section { margin-bottom: 48px; }
+
+h2 {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-size: 1.12rem;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+  display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  align-items: baseline;
 }
-
-.research-area {
-  flex-basis: calc(33.33% - 20px);
-  margin-bottom: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+h2 a {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #888;
 }
+h2 a:hover { color: #1a56c4; text-decoration: none; }
 
-.research-area h4 {
+.section-intro { font-size: 15px; color: #444; margin-bottom: 12px; }
+
+/* NEWS */
+.news-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 0 18px;
+  font-size: 15px;
+  padding: 7px 0;
+  border-bottom: 1px solid #f4f4f4;
   color: #333;
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 1.1em;
 }
+.news-row:last-child { border-bottom: none; }
+.news-date { color: #aaa; font-size: 13.5px; padding-top: 2px; white-space: nowrap; }
 
-.research-area ul {
-  padding-left: 20px;
-  margin-bottom: 0;
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  padding: 1px 7px;
+  border-radius: 2px;
+  vertical-align: middle;
+  margin-left: 5px;
+  font-weight: 500;
 }
+.tag-award { background: #fff8ed; color: #b45309; }
+.tag-paper { background: #eff6ff; color: #1d4ed8; }
 
-.research-area li {
-  margin-bottom: 5px;
+/* EXPERIENCE */
+.exp-item { margin-bottom: 20px; }
+.exp-item:last-child { margin-bottom: 0; }
+.exp-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px; }
+.exp-company { font-weight: 500; font-size: 15.5px; }
+.exp-date { font-size: 13.5px; color: #999; }
+.exp-role { font-size: 14.5px; color: #666; margin-bottom: 4px; }
+.exp-detail { font-size: 14.5px; color: #666; padding-left: 12px; margin-top: 2px; list-style: none; }
+.exp-detail li { margin-bottom: 2px; }
+.exp-detail li::before { content: '– '; color: #ccc; }
+
+/* PUBLICATIONS & NOTES */
+.pub-item { padding: 11px 0; border-bottom: 1px solid #f4f4f4; }
+.pub-item:last-child { border-bottom: none; }
+.pub-title { font-size: 15.5px; color: #222; margin-bottom: 3px; line-height: 1.5; }
+.pub-title a { color: #222; }
+.pub-title a:hover { color: #1a56c4; }
+.pub-desc { font-size: 14px; color: #666; margin-bottom: 4px; }
+.pub-authors { font-size: 13.5px; color: #888; margin-bottom: 4px; }
+.pub-authors strong { color: #555; font-weight: 500; }
+.pub-meta { font-size: 13.5px; color: #aaa; }
+.pub-meta a { color: #888; }
+.pub-meta a:hover { color: #1a56c4; }
+.pub-meta em { color: #555; font-style: normal; }
+.sep { color: #ddd; }
+.award { color: #b45309; }
+.downloads { color: #15803d; }
+.status { color: #999; font-style: italic; }
+
+/* PUBLICATIONS PAGE */
+.page-header { margin-bottom: 40px; }
+.page-header h1 { font-size: 1.7rem; margin-bottom: 8px; }
+.page-sub { font-size: 14.5px; color: #888; }
+.page-sub a { color: #888; }
+.page-sub a:hover { color: #1a56c4; }
+.cat-block { margin-bottom: 44px; }
+.pub-footnote { font-size: 13.5px; color: #aaa; margin-top: 8px; }
+
+/* CONTACT */
+.contact-note { font-size: 15px; color: #444; }
+
+/* FOOTER */
+footer {
+  margin-top: 72px;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+  font-size: 13.5px;
+  color: #aaa;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 16px;
 }
+footer a { color: #999; }
+footer a:hover { color: #1a56c4; }
 
-.research-area i {
-  margin-right: 5px;
-  color: #4A90E2;
-}
-
-@media (max-width: 768px) {
-  .research-area {
-    flex-basis: 100%;
-  }
+@media (max-width: 620px) {
+  .page { padding: 40px 22px 56px; }
+  nav { justify-content: flex-start; gap: 8px 20px; margin-bottom: 40px; }
+  .profile { grid-template-columns: 1fr; gap: 26px; }
+  .photo-wrap { width: 150px; }
+  h1 { font-size: 1.65rem; }
+  .news-row { grid-template-columns: 82px 1fr; gap: 0 14px; }
 }

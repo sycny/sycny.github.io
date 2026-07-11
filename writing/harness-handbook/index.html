@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harness Handbook — Making Evolving Agent Harnesses Readable, Navigable &amp; Editable</title>
+  <meta name="description" content="A behavior-first map of an agent-harness codebase. Harness Handbook lets developers and coding agents locate a behavior, read the code evidence, and edit with confidence." />
+
+  <!-- Fonts: Source Serif 4 (display + body), Inter (UI, captions, figures), IBM Plex Mono (code) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&amp;family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/book-mark.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
+
+  <!-- ============================================================= -->
+  <!-- Top navigation                                                -->
+  <!-- ============================================================= -->
+  <header class="topbar" id="topbar">
+    <div class="topbar__inner">
+      <a class="topbar__brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="22" height="22" fill="none">
+            <rect x="4" y="3" width="17" height="26" rx="3" class="bm-cover"/>
+            <rect x="8" y="3" width="17" height="26" rx="3" class="bm-page"/>
+            <line x1="12" y1="10" x2="21" y2="10" class="bm-line"/>
+            <line x1="12" y1="15" x2="21" y2="15" class="bm-line"/>
+            <line x1="12" y1="20" x2="18" y2="20" class="bm-line"/>
+          </svg>
+        </span>
+        <span class="brand-text" data-i18n-text="brand.text">Harness&nbsp;Handbook</span>
+      </a>
+      <nav class="topbar__nav">
+        <a href="../../" class="topbar__link">← Yucheng Shi</a>
+        <a href="#method" class="topbar__link" data-i18n-text="nav.method">Method</a>
+        <a href="#results" class="topbar__link" data-i18n-text="nav.results">Results</a>
+        <a href="#paper" class="topbar__link topbar__link--cta" data-i18n-text="nav.paper">Read the paper</a>
+        <div class="seg seg--lang" id="lang-switch" role="tablist" aria-label="Language">
+          <button class="seg__btn is-active" data-lang="en" data-i18n-text="lang.en">EN</button>
+          <button class="seg__btn" data-lang="zh" data-i18n-text="lang.zh">中文</button>
+        </div>
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle theme" data-i18n-aria="theme.toggle">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="17" height="17"><circle cx="12" cy="12" r="4.5"/><g><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="4.2" y1="4.2" x2="6" y2="6"/><line x1="18" y1="18" x2="19.8" y2="19.8"/><line x1="19.8" y1="4.2" x2="18" y2="6"/><line x1="6" y1="18" x2="4.2" y2="19.8"/></g></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="17" height="17"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <span id="top"></span>
+
+  <div class="layout">
+
+    <!-- ---------- Table of Contents (sticky sidebar) ---------- -->
+    <aside class="toc" id="toc" aria-label="Table of contents">
+      <p class="toc__title" data-i18n-text="toc.title">Contents</p>
+      <nav class="toc__nav">
+        <a href="#motivation" class="toc__item" data-i18n-text="toc.1">The harness is half the agent</a>
+        <a href="#bottleneck" class="toc__item" data-i18n-text="toc.2">The real bottleneck</a>
+        <a href="#method" class="toc__item" data-i18n-text="toc.3">One map, three levels</a>
+        <a href="#construction" class="toc__item" data-i18n-text="toc.4">Building a handbook</a>
+        <a href="#bgpd" class="toc__item" data-i18n-text="toc.5">Using the handbook</a>
+        <a href="#results" class="toc__item" data-i18n-text="toc.6">Does it help?</a>
+        <a href="#insights" class="toc__item" data-i18n-text="toc.7">What we learned</a>
+        <a href="#takeaways" class="toc__item" data-i18n-text="toc.8">Takeaways</a>
+      </nav>
+    </aside>
+
+    <!-- ---------- Main article ---------- -->
+    <main class="article">
+
+      <!-- ========================================================= -->
+      <!-- HERO — Source: paper title, author block, abstract        -->
+      <!-- ========================================================= -->
+      <section class="hero" id="hero">
+        <p class="hero__kicker" data-i18n="hero.kicker">Research &nbsp;·&nbsp; Tencent Hunyuan LLM &nbsp;·&nbsp; June 2026</p>
+
+        <h1 class="hero__title" data-i18n-text="hero.title">Harness Handbook</h1>
+        <p class="hero__dek" data-i18n-text="hero.dek">Making evolving agent harnesses readable, navigable, and editable.</p>
+
+        <p class="hero__subtitle" data-i18n="hero.subtitle">
+          The hardest part of changing an agent harness is not writing the patch — it is finding
+          every place a behavior lives. Harness Handbook is a <b>behavior-first map</b> of a harness
+          codebase: developers and coding agents start from what the system <em>does</em>, drill down
+          to the code that does it, and edit with the full picture in hand.
+        </p>
+
+        <div class="hero__byline">
+          <p class="authors" data-i18n="hero.authors">
+            Ruhan Wang · Yucheng Shi · Zongxia Li · Zhongzhi Li ·
+            Kishan Panaganti · Haitao Mi · Dongruo Zhou · Leoweiliang
+          </p>
+          <p class="affils" data-i18n="hero.affils">
+            Tencent Hunyuan LLM &nbsp;·&nbsp; Indiana University &nbsp;·&nbsp;
+            University of Maryland &nbsp;·&nbsp; University of Georgia
+          </p>
+        </div>
+
+        <figure class="hero__figure">
+          <div id="hero-illustration" class="illustration illustration--hero"></div>
+          <figcaption data-i18n="hero.figcap">
+            <b>The idea in one picture.</b> A behavioral request rarely maps to one implementation
+            site. The handbook sits between <span class="u-b">what you ask for</span> and
+            <span class="u-i">where it lives in code</span>, so localization happens before editing —
+            not during it.
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- TL;DR                                                     -->
+      <!-- ========================================================= -->
+      <section class="tldr" aria-label="Summary">
+        <h2 class="tldr__kicker" data-i18n-text="tldr.kicker">In one minute</h2>
+        <ol class="tldr__list">
+          <li data-i18n="tldr.1">
+            An agent's behavior is shaped as much by its <b>harness</b> — the code that builds prompts,
+            calls tools, and carries state around the model — as by the model itself.
+          </li>
+          <li data-i18n="tldr.2">
+            Harnesses change constantly, and changing them is hard because <b>a single behavior is
+            scattered</b> across files, execution stages, and shared state. Finding all of it —
+            <i>behavior localization</i> — is the real bottleneck.
+          </li>
+          <li data-i18n="tldr.3">
+            The <b>Harness Handbook</b> reorganizes a harness around what it does. Three levels of
+            detail lead from a system overview to the exact code, and every claim links back to
+            verifiable evidence.
+          </li>
+          <li data-i18n="tldr.4">
+            On two production-grade harnesses, a planner that consults the handbook produces
+            <b>better modification plans with fewer tokens</b>, as judged by three independent models.
+          </li>
+        </ol>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- 01 · MOTIVATION — Source: Introduction, Related Work      -->
+      <!-- ========================================================= -->
+      <section class="section" id="motivation">
+        <p class="section__num" data-i18n-text="s01.num">Part 01</p>
+        <h2 class="section__title" data-i18n-text="s01.title">The harness is half the agent</h2>
+
+        <p data-i18n="s01.p1">
+          When people talk about AI agents, they usually mean the model. But in a deployed system the
+          model is only one component. Everything else — what the model sees, which tools it can call,
+          how state persists between steps, how a response becomes the next action — is decided by the
+          <span class="u-h">harness</span>, the orchestration layer around the model.
+        </p>
+
+        <p data-i18n="s01.p2">
+          This is why two agents built on the same model can behave completely differently: the harness
+          defines the workflow. And the harness never stands still. Models improve, APIs change, new
+          tools arrive, products demand new behaviors. Developers respond by continually modifying the
+          harness — tightening a retry policy, adding a confirmation step, redesigning memory. We call
+          this ongoing process <b>harness evolution</b>.
+        </p>
+
+        <aside class="note">
+          <p class="note__label" data-i18n-text="s01.note.label">What is a harness?</p>
+          <p data-i18n="s01.note.p">
+            The runtime layer around a model: it assembles context, exposes tools, carries state across
+            steps, and turns model output into actions. Frameworks such as AutoGen and OpenHands, and
+            production systems like Claude Code and Codex, treat harness design as a first-class factor
+            in agent reliability.
+          </p>
+        </aside>
+
+        <p data-i18n="s01.p3">
+          The emerging way to evolve a harness is to describe the desired <span class="u-b">behavior</span>
+          in plain language and let a coding agent translate it into code changes. The catch: production
+          harnesses are large, interconnected, and behaviorally distributed. A single behavior may be
+          implemented across many files, functions, execution stages, and pieces of shared state. So
+          before anyone — human or agent — can change the harness, they must answer a deceptively simple
+          question: <b data-i18n-text="s01.q">where is this behavior actually implemented?</b>
+        </p>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- 02 · BOTTLENECK — Source: Introduction, Related Work      -->
+      <!-- ========================================================= -->
+      <section class="section" id="bottleneck">
+        <p class="section__num" data-i18n-text="s02.num">Part 02</p>
+        <h2 class="section__title" data-i18n-text="s02.title">The real bottleneck: finding where behavior lives</h2>
+
+        <p data-i18n="s02.p1">
+          Take a concrete request: <i>“ask for confirmation before destructive tool calls.”</i>
+          It sounds like a one-line change. But a harness is organized by
+          <span class="u-i">implementation</span> — files, functions, config, control flow — while the
+          request is stated as <span class="u-b">behavior</span>. In a production harness that one
+          behavior touches a prompt template, a tool wrapper, a feature flag, the state manager,
+          telemetry, and a downstream consumer. Each lives in a different folder.
+        </p>
+
+        <figure class="figure figure--wide">
+          <div id="scatter-illustration" class="illustration illustration--scatter"></div>
+          <figcaption data-i18n="s02.figcap">
+            <b>One behavior, six sites.</b> The confirmation behavior is spread across four subsystems,
+            and half the sites never mention the word <i>confirm</i> — keyword search alone would miss
+            them. Finding <em>all</em> the sites before editing is what the paper calls
+            <b>behavior localization</b>.
+          </figcaption>
+        </figure>
+
+        <p data-i18n="s02.p2">
+          <b>Behavior localization</b> — mapping a behavioral request to the set of implementation
+          sites that must be inspected or modified — is often the primary bottleneck of harness
+          evolution. The hard part is not generating a patch; it is knowing where the patch must land,
+          and being sure nothing was missed.
+        </p>
+
+        <p data-i18n="s02.p3">
+          Coding agents feel this bottleneck acutely. With a limited context window, an agent cannot
+          see the whole harness at once; it explores the repository file by file, reconstructing the
+          behavior-to-code mapping as it goes. That exploration is slow, expensive, and often
+          incomplete — mirrored paths, fallback logic, and rarely-executed branches are exactly the
+          places it fails to look.
+        </p>
+
+        <p data-i18n="s02.p4">
+          This is the gap the Harness Handbook fills: it lets developers and coding agents
+          <b>start from behavior</b>, and be guided to the implementation sites that actually matter.
+        </p>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- 03 · THE HANDBOOK — Source: §3.1 Representation + Fig 1   -->
+      <!-- ========================================================= -->
+      <section class="section" id="method">
+        <p class="section__num" data-i18n-text="s03.num">Part 03</p>
+        <h2 class="section__title" data-i18n-text="s03.title">The handbook: one map, three levels</h2>
+
+        <p data-i18n="s03.p1">
+          A Harness Handbook is not conventional documentation. It reorganizes a harness around
+          <span class="u-b">what the system does</span> instead of how the source tree is laid out,
+          while keeping precise links back to the <span class="u-i">code</span>. It exposes the system
+          at three depths, and you only descend when you need to.
+        </p>
+
+        <figure class="figure figure--wide">
+          <div id="levels-illustration" class="illustration illustration--levels"></div>
+          <figcaption data-i18n="s03.figcap">
+            <b>Progressive disclosure.</b> Each level answers one question and narrows the search:
+            from the whole system, to the components involved, to one behavior unit with its code
+            evidence. Nothing forces you to read all of it — you read only the layer your decision needs.
+          </figcaption>
+        </figure>
+
+        <div class="levels-prose">
+          <p data-i18n="s03.l1">
+            <b>Level 1 · System overview</b> answers <i>“what does this system do as a whole?”</i> —
+            architecture, execution model, major stages, data and state flow, entry and exit conditions.
+          </p>
+          <p data-i18n="s03.l2">
+            <b>Level 2 · Component overview</b> answers <i>“which parts are involved?”</i> — stages and
+            components with their responsibilities, inputs and outputs, dependencies, and key states.
+            This is where a behavioral request gets narrowed to the relevant components.
+          </p>
+          <p data-i18n="s03.l3">
+            <b>Level 3 · Unit deep dive</b> answers <i>“where exactly is the code?”</i> — one behavior
+            unit in full: execution logic, state transitions, exception handling, and source anchors
+            down to files, functions, and line ranges.
+          </p>
+        </div>
+
+        <h3 class="subhead" data-i18n-text="s03.entry.head">What an entry actually looks like</h3>
+        <p data-i18n="s03.entry.p">
+          Here is a Level-3 entry for the confirmation behavior from earlier — condensed, but faithful
+          to the structure. Notice that every statement ends in an <b>evidence link</b>: a file, a
+          function, a line range. Prose explains; facts anchor.
+        </p>
+
+        <figure class="figure">
+          <div class="unit-card">
+            <div class="unit-card__head">
+              <span class="unit-card__badge" data-i18n-text="unit.badge">Unit · Action stage</span>
+              <h4 data-i18n-text="unit.title">Destructive-call confirmation</h4>
+              <p data-i18n="unit.summary">Pauses execution before any tool call flagged destructive and asks the user to approve or reject it.</p>
+            </div>
+            <dl class="unit-card__fields">
+              <div class="unit-field">
+                <dt data-i18n-text="unit.f1.k">Trigger</dt>
+                <dd data-i18n="unit.f1.v">Planner emits a tool call with <code>destructive=true</code></dd>
+              </div>
+              <div class="unit-field">
+                <dt data-i18n-text="unit.f2.k">State</dt>
+                <dd data-i18n="unit.f2.v">Sets <code>pending_confirmation</code>; cleared on user response</dd>
+              </div>
+              <div class="unit-field">
+                <dt data-i18n-text="unit.f3.k">Control flow</dt>
+                <dd data-i18n="unit.f3.v">Approve → execute call &nbsp;·&nbsp; Reject → skip and log</dd>
+              </div>
+              <div class="unit-field">
+                <dt data-i18n-text="unit.f4.k">Edge case</dt>
+                <dd data-i18n="unit.f4.v">Auto-approved when <code>flags.headless</code> is set</dd>
+              </div>
+            </dl>
+            <div class="unit-card__evidence">
+              <span class="unit-card__evlabel" data-i18n-text="unit.ev.label">Evidence</span>
+              <span class="evchip"><code>tools/wrapper.py</code> · L84–128</span>
+              <span class="evchip"><code>state/manager.py</code> · L40–61</span>
+              <span class="evchip"><code>prompts/system.md</code> · §tool-safety</span>
+              <span class="evchip"><code>config/flags.py</code> · L12</span>
+            </div>
+          </div>
+          <figcaption data-i18n="unit.figcap">
+            <b>A Level-3 behavior unit.</b> One screen of prose that would otherwise take an afternoon
+            of repository search — with links that make every claim checkable.
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- 04 · CONSTRUCTION — Source: §3.2 (Phases 1–3) + Fig 2     -->
+      <!-- ========================================================= -->
+      <section class="section" id="construction">
+        <p class="section__num" data-i18n-text="s04.num">Part 04</p>
+        <h2 class="section__title" data-i18n-text="s04.title">Building a handbook</h2>
+
+        <p data-i18n="s04.p1">
+          A handbook is generated from an existing harness codebase in three steps. The design
+          constraint throughout: <b>facts come from code, not from model guesses.</b>
+        </p>
+
+        <figure class="figure figure--wide">
+          <div id="pipeline-illustration" class="illustration illustration--pipeline"></div>
+          <figcaption data-i18n="s04.figcap">
+            <b>From codebase to handbook.</b> Static analysis produces the facts; a proposer–reviewer
+            loop organizes them around behavior; synthesis renders the three-level handbook with
+            evidence links intact.
+          </figcaption>
+        </figure>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step__head">
+              <span class="step__n">1</span>
+              <h3 data-i18n-text="s04.step1.title">Extract facts</h3>
+              <span class="step__out" data-i18n-text="s04.step1.out">→ program graph</span>
+            </div>
+            <p data-i18n="s04.step1.p">
+              Static analysis over the repository collects files, functions, classes, call
+              relationships, state reads and writes, configuration boundaries, and external API calls.
+              Together they form a <b>program graph</b>: how the implementation is actually connected.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step__head">
+              <span class="step__n">2</span>
+              <h3 data-i18n-text="s04.step2.title">Organize by behavior</h3>
+              <span class="step__out" data-i18n-text="s04.step2.out">→ behavior map</span>
+            </div>
+            <p data-i18n="s04.step2.p">
+              Starting from a rough <b>execution skeleton</b> of the harness lifecycle, functions and
+              code regions from the program graph are mapped onto behavioral stages. A
+              <b>proposer–reviewer loop</b> refines the mapping — the proposer suggests stage
+              assignments and skeleton updates; the reviewer checks them against call relationships,
+              state dependencies, and execution flow — until the map converges.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step__head">
+              <span class="step__n">3</span>
+              <h3 data-i18n-text="s04.step3.title">Synthesize the handbook</h3>
+              <span class="step__out" data-i18n-text="s04.step3.out">→ handbook</span>
+            </div>
+            <p data-i18n="s04.step3.p">
+              The converged behavior map is rendered into the three-level structure: system overview,
+              component overview, unit deep dives. Explanations are written in natural language, but
+              every source link, function reference, and snippet stays grounded in the extracted facts
+              — <b>prose explains, facts anchor</b>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- 05 · USING IT — Source: §3.3 BGPD + Algorithm 1           -->
+      <!-- ========================================================= -->
+      <section class="section" id="bgpd">
+        <p class="section__num" data-i18n-text="s05.num">Part 05</p>
+        <h2 class="section__title" data-i18n-text="s05.title">Using the handbook: coarse to fine</h2>
+
+        <p data-i18n="s05.p1">
+          A map is only useful if it changes how you navigate. The paper's procedure —
+          <b>Behavior-Guided Progressive Disclosure</b> (BGPD) — turns the handbook into a structured
+          localization workflow: at each step, open only the layer the current decision needs.
+        </p>
+
+        <figure class="figure figure--wide">
+          <div id="bgpd-illustration" class="illustration illustration--bgpd"></div>
+          <figcaption data-i18n="s05.figcap">
+            <b>From request to edit plan.</b> The request selects execution stages; stages select
+            behavior units; units expose implementation links; only then is an edit plan written.
+            The repository stays the ground truth — the handbook just decides where to look.
+          </figcaption>
+        </figure>
+
+        <div class="flowpath" aria-label="BGPD path">
+          <span class="fp" data-i18n-text="s05.flow.1">request</span><span class="fp__arw">→</span>
+          <span class="fp" data-i18n-text="s05.flow.2">stages</span><span class="fp__arw">→</span>
+          <span class="fp" data-i18n-text="s05.flow.3">behavior units</span><span class="fp__arw">→</span>
+          <span class="fp" data-i18n-text="s05.flow.4">code links</span><span class="fp__arw">→</span>
+          <span class="fp fp--last" data-i18n-text="s05.flow.5">edit plan</span>
+        </div>
+
+        <h3 class="subhead" data-i18n-text="s05.use.head">What this looks like in practice</h3>
+        <div class="usecols">
+          <div class="usecol">
+            <p class="usecol__label" data-i18n-text="s05.use.dev.label">For a developer</p>
+            <ul class="ticklist">
+              <li data-i18n="s05.use.dev.1">Onboard through Level 1 instead of the directory tree — the execution story first, files second.</li>
+              <li data-i18n="s05.use.dev.2">Search by behavior (“confirmation”, “retry”, “termination”), not by guessing file names.</li>
+              <li data-i18n="s05.use.dev.3">Before editing, open the unit's evidence links — the scattered sites are already enumerated.</li>
+            </ul>
+          </div>
+          <div class="usecol">
+            <p class="usecol__label" data-i18n-text="s05.use.agent.label">For a coding agent</p>
+            <ul class="ticklist">
+              <li data-i18n="s05.use.agent.1">The planner consults the handbook via BGPD before touching the repository.</li>
+              <li data-i18n="s05.use.agent.2">Each step loads only one layer into context — no whole-repo exploration.</li>
+              <li data-i18n="s05.use.agent.3">The edit plan cites handbook evidence, so the executor verifies against real code.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- 06 · RESULTS — Source: §4 (setup, Figs 3–5, Table 1)      -->
+      <!-- ========================================================= -->
+      <section class="section" id="results">
+        <p class="section__num" data-i18n-text="s06.num">Part 06</p>
+        <h2 class="section__title" data-i18n-text="s06.title">Does it help?</h2>
+
+        <p data-i18n="s06.p1">
+          The evaluation asks a narrow question: does consulting the handbook help an agent localize
+          behavior before editing? Everything else stays fixed — same coding setup, same requests —
+          and only one variable changes: whether the planner uses BGPD to consult the handbook first.
+        </p>
+
+        <div class="specs">
+          <div class="spec">
+            <p class="spec__label" data-i18n-text="s06.spec1.label">Harnesses</p>
+            <p class="spec__value" data-i18n-text="s06.spec1.value">Terminus-2 &amp; Codex</p>
+            <p class="spec__note" data-i18n="s06.spec1.note">Two production-grade harnesses with multi-stage control flow and cross-module behavior.</p>
+          </div>
+          <div class="spec">
+            <p class="spec__label" data-i18n-text="s06.spec2.label">Comparison</p>
+            <p class="spec__value" data-i18n-text="s06.spec2.value">With vs. without handbook</p>
+            <p class="spec__note" data-i18n="s06.spec2.note">Identical pipeline; the only change is whether the planner consults the handbook before editing.</p>
+          </div>
+          <div class="spec">
+            <p class="spec__label" data-i18n-text="s06.spec3.label">Judges</p>
+            <p class="spec__value" data-i18n-text="s06.spec3.value">Three independent models</p>
+            <p class="spec__note spec__note--judges">
+              <img src="assets/images/judge-gpt.jpg" alt="OpenAI GPT-5.5" width="28" height="28" loading="lazy" decoding="async" />
+              <img src="assets/images/judge-claude.jpg" alt="Anthropic Opus 4.8" width="28" height="28" loading="lazy" decoding="async" />
+              <img src="assets/images/judge-deepseek.jpg" alt="DeepSeek-V4-Pro" width="28" height="28" loading="lazy" decoding="async" />
+              <span data-i18n="s06.spec3.note">GPT-5.5, Opus 4.8, DeepSeek-V4-Pro — scores averaged to reduce single-judge bias.</span>
+            </p>
+          </div>
+        </div>
+
+        <p class="reqtypes" data-i18n="s06.reqtypes">
+          Requests come in three flavors: <b>Q</b> — refine an existing behavior (timing, triggers,
+          control flow); <b>CF</b> — add a capability end-to-end across schemas, pipeline, and
+          interfaces; <b>SH</b> — search-hostile changes across mirrored, fallback, and cold paths
+          that keyword search tends to miss.
+        </p>
+
+        <!-- ---------- Result 1 ---------- -->
+        <h3 class="subhead subhead--result"><span class="subhead__tag" data-i18n-text="s06.r1.tag">Result 1</span> <span data-i18n-text="s06.r1.head">Better plans at lower search cost</span></h3>
+        <p data-i18n="s06.r1.p">
+          Under pairwise judging, the handbook-assisted planner wins more often on both harnesses —
+          and spends fewer planner tokens per case, because search is more targeted.
+        </p>
+
+        <figure class="figure figure--wide">
+          <div class="chart-card">
+            <div class="chart-duo">
+              <div class="chart-panel">
+                <h4 class="chart-panel__title" data-i18n-text="chart.win.title">Overall win rate</h4>
+                <p class="chart-panel__sub" data-i18n-text="chart.win.sub">% of pairwise comparisons won · higher is better</p>
+                <div class="chart" id="chart-winrate"></div>
+              </div>
+              <div class="chart-panel">
+                <h4 class="chart-panel__title" data-i18n-text="chart.tok.title">Planner token cost</h4>
+                <p class="chart-panel__sub" data-i18n-text="chart.tok.sub">M tokens per case · lower is better</p>
+                <div class="chart" id="chart-tokens"></div>
+              </div>
+            </div>
+            <div class="legend">
+              <span class="legend__item"><span class="legend__swatch legend__swatch--bl"></span><span data-i18n-text="legend.baseline">Baseline</span></span>
+              <span class="legend__item"><span class="legend__swatch legend__swatch--hb"></span><span data-i18n-text="legend.handbook">With handbook</span></span>
+            </div>
+          </div>
+          <figcaption data-i18n="s06.r1.figcap">
+            <b>Win rate and cost move together.</b> The handbook lifts win rate on both harnesses
+            (+10.0 on Codex, +18.9 on Terminus) while planner tokens per case drop
+            (0.102→0.093&nbsp;M and 0.058→0.053&nbsp;M).
+          </figcaption>
+        </figure>
+
+        <figure class="figure figure--wide">
+          <div class="chart-card">
+            <h4 class="chart-panel__title" data-i18n-text="chart.judges.title">Every judge, both harnesses</h4>
+            <p class="chart-panel__sub" data-i18n-text="chart.judges.sub">Win rate without → with handbook, per judge</p>
+            <div class="chart" id="chart-judges"></div>
+          </div>
+          <figcaption data-i18n="s06.judges.figcap">
+            <b>Not a single-judge artifact.</b> All three judges prefer the handbook arm on both
+            harnesses; the largest single shift is +26.7 points (Opus&nbsp;4.8 on Terminus).
+          </figcaption>
+        </figure>
+
+        <!-- ---------- Result 2 ---------- -->
+        <h3 class="subhead subhead--result"><span class="subhead__tag" data-i18n-text="s06.r2.tag">Result 2</span> <span data-i18n-text="s06.r2.head">The gain comes from localization</span></h3>
+        <p data-i18n="s06.r2.p">
+          Scoring predicted edit sites against an answer-key reference plan — at file and symbol
+          granularity — shows where the improvement comes from: recall, precision, and F1 rise in
+          nearly every setting, and <i>Wrong</i> cases (missing the relevant subsystem entirely)
+          drop sharply.
+        </p>
+
+        <figure class="figure figure--wide">
+          <div class="chart-card loc-card">
+            <div class="chart-card__controls">
+              <div class="seg" id="loc-key-view" role="tablist" aria-label="Answer key">
+                <button class="seg__btn is-active" data-key="opus" data-i18n-text="seg.opus">Opus 4.8 key</button>
+                <button class="seg__btn" data-key="gpt" data-i18n-text="seg.gpt">GPT-5.5 key</button>
+              </div>
+            </div>
+            <div class="loc-table-wrap">
+              <table class="loc-table" id="loc-table">
+                <thead>
+                  <tr>
+                    <th data-i18n-text="loc.th.harness">Harness</th><th data-i18n-text="loc.th.level">Level</th><th data-i18n-text="loc.th.metric">Metric</th>
+                    <th class="grp" data-i18n-text="loc.th.baseline">Baseline</th><th class="grp" data-i18n-text="loc.th.handbook">Handbook</th><th class="num" data-i18n-text="loc.th.gap">Δ</th>
+                  </tr>
+                </thead>
+                <tbody id="loc-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+          <figcaption id="loc-cap">
+            <b>Answer-key-grounded localization</b> (Opus 4.8 reference key). For <b>Wrong</b>, lower is better.
+          </figcaption>
+        </figure>
+
+        <details class="aside">
+          <summary data-i18n-text="s06.aside.summary">What about the LLM-rubric view?</summary>
+          <p data-i18n="s06.aside.p">
+            Judges also scored plans on three rubrics — <b>localization</b>, <b>scope bloat</b>, and
+            <b>reasoning</b>. The handbook improves localization and reasoning while scope bloat stays
+            roughly flat: the planner inspects <em>more relevant</em> sites without proposing broader,
+            sloppier edits. Better aim, not a wider net.
+          </p>
+        </details>
+
+        <!-- ---------- Result 3 ---------- -->
+        <h3 class="subhead subhead--result"><span class="subhead__tag" data-i18n-text="s06.r3.tag">Result 3</span> <span data-i18n-text="s06.r3.head">Robust across request types and difficulty</span></h3>
+        <p data-i18n="s06.r3.p">
+          The advantage holds across all three request flavors and across Easy, Medium, and Hard cases
+          — where Hard means hidden dependencies in less obvious execution paths. The handbook helps
+          most exactly where localization is hardest.
+        </p>
+
+        <figure class="figure figure--wide">
+          <div class="chart-card">
+            <div class="chart-card__controls">
+              <div class="seg" id="scenario-harness" role="tablist" aria-label="Harness">
+                <button class="seg__btn is-active" data-harness="Codex" data-i18n-text="seg.codex">Codex</button>
+                <button class="seg__btn" data-harness="Terminus" data-i18n-text="seg.terminus">Terminus</button>
+              </div>
+              <div class="seg" id="scenario-view" role="tablist" aria-label="Grouping">
+                <button class="seg__btn is-active" data-sview="pattern" data-i18n-text="seg.pattern">By request type</button>
+                <button class="seg__btn" data-sview="difficulty" data-i18n-text="seg.difficulty">By difficulty</button>
+              </div>
+            </div>
+            <div class="chart" id="chart-scenario"></div>
+            <div class="legend">
+              <span class="legend__item"><span class="legend__swatch legend__swatch--bl"></span><span data-i18n-text="legend.baseline">Baseline</span></span>
+              <span class="legend__item"><span class="legend__swatch legend__swatch--hb"></span><span data-i18n-text="legend.handbook">With handbook</span></span>
+            </div>
+          </div>
+          <figcaption data-i18n="s06.r3.figcap">
+            <b>Generalization.</b> Win rate stays ahead across modification patterns and difficulty
+            levels on both harnesses.
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- 07 · INSIGHTS — Source: §4.2                              -->
+      <!-- ========================================================= -->
+      <section class="section" id="insights">
+        <p class="section__num" data-i18n-text="s07.num">Part 07</p>
+        <h2 class="section__title" data-i18n-text="s07.title">What we learned</h2>
+
+        <div class="insights">
+          <div class="insight">
+            <span class="insight__n">01</span>
+            <div>
+              <h3 data-i18n-text="s07.i1.title">The bottleneck really is localization</h3>
+              <p data-i18n="s07.i1.p">
+                The handbook's benefit tracks localization metrics closely. Guide the planner to the
+                behavior-relevant region, and better edit plans follow with less wasted exploration.
+              </p>
+            </div>
+          </div>
+          <div class="insight">
+            <span class="insight__n">02</span>
+            <div>
+              <h3 data-i18n-text="s07.i2.title">Better aim, not broader scope</h3>
+              <p data-i18n="s07.i2.p">
+                The planner doesn't just inspect more files — it identifies the right files and
+                symbols. Precision improves alongside recall, and scope bloat stays flat.
+              </p>
+            </div>
+          </div>
+          <div class="insight">
+            <span class="insight__n">03</span>
+            <div>
+              <h3 data-i18n-text="s07.i3.title">The representation generalizes</h3>
+              <p data-i18n="s07.i3.p">
+                Gains hold across two harnesses, three judges, three request patterns, and three
+                difficulty levels — evidence for a general behavior-centric representation rather than
+                benchmark-specific tricks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- 08 · TAKEAWAYS                                            -->
+      <!-- ========================================================= -->
+      <section class="section" id="takeaways">
+        <p class="section__num" data-i18n-text="s08.num">Part 08</p>
+        <h2 class="section__title" data-i18n-text="s08.title">Takeaways</h2>
+
+        <ul class="ticklist ticklist--takeaways">
+          <li data-i18n="s08.1">Harness evolution is hard because behavioral changes rarely map to one obvious code location.</li>
+          <li data-i18n="s08.2">A useful harness representation organizes the system by behavior — and keeps every claim linked to code evidence.</li>
+          <li data-i18n="s08.3">Progressive disclosure fits how both people and agents work: read the layer your decision needs, nothing more.</li>
+          <li data-i18n="s08.4">Localize first, edit second. The measured gains — higher win rate, better recall and precision, fewer tokens — all follow from that order.</li>
+        </ul>
+
+        <p class="closing" data-i18n="s08.closing">
+          If your team maintains an agent harness, the pattern is portable: extract facts, organize
+          them by behavior, keep the evidence links — and let both your developers and your coding
+          agents start from behavior.
+        </p>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- FOOTER / citation                                         -->
+      <!-- ========================================================= -->
+      <footer class="footer" id="paper">
+        <h3 data-i18n-text="footer.cite.title">Cite this work</h3>
+        <div class="bibtex">
+          <button class="bibtex__copy" id="copy-bib" title="Copy BibTeX" data-i18n-text="bib.copy">Copy</button>
+          <pre id="bibtex-block">@article{wang2026harnesshandbook,
+  title   = {Harness Handbook: Making Evolving Agent Harnesses
+             Readable, Navigable, and Editable},
+  author  = {Wang, Ruhan and Shi, Yucheng and Li, Zongxia and
+             Li, Zhongzhi and Panaganti, Kishan and Mi, Haitao and
+             Zhou, Dongruo and Leoweiliang},
+  year    = {2026},
+  note    = {Tencent Hunyuan LLM}
+}</pre>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
