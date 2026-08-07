@@ -151,6 +151,7 @@ h2 a:hover { color: #1a56c4; text-decoration: none; }
 .pub-meta a:hover { color: #1a56c4; }
 .pub-meta em { color: #555; font-style: normal; }
 .sep { color: #ddd; }
+.lead { color: #555; font-weight: 600; }
 .award { color: #b45309; }
 .downloads { color: #15803d; }
 .status { color: #999; font-style: italic; }

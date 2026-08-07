@@ -38,8 +38,8 @@
       <p class="bio">
         I work on <strong>agent reinforcement learning</strong> and <strong>self-evolving AI</strong> —
         building agents that improve through environmental interaction and self-generated experience.
-        My current focus is agents for long-horizon terminal work: acting through real tools, training
-        on executable environments, and learning from the trajectories they create.
+        I currently lead projects on long-horizon terminal agents: evaluating sustained work,
+        recursively synthesizing executable training environments, and stabilizing asynchronous post-training.
       </p>
       <div class="links">
         <a href="mailto:mailofsyc@gmail.com">Email</a>
@@ -61,6 +61,8 @@
   <!-- NEWS -->
   <section>
     <h2>News</h2>
+    <div class="news-row"><span class="news-date">Aug 2026</span><span>Led and released <a href="https://zhongzhi660.github.io/recursive-verified-synthesis-site/">Recursive Synthesis for Long-Horizon Terminal Tasks</a> — 37,484 verified tasks across 15 rounds at about $0.05 per task. <a href="https://arxiv.org/abs/2608.05466">Paper</a> <span class="sep">·</span> <a href="https://zhongzhi660.github.io/recursive-verified-synthesis-site/">Blog</a> <span class="tag tag-paper">arXiv</span></span></div>
+    <div class="news-row"><span class="news-date">Jul 2026</span><span>Led and released <a href="https://jyyang26.github.io/stable_async_analysis/">Stale but Stable</a> — a staleness-adaptive trust region for stabilizing asynchronous RL. <a href="https://arxiv.org/abs/2607.18722">Paper</a> <span class="sep">·</span> <a href="https://jyyang26.github.io/stable_async_analysis/">Blog</a> <span class="tag tag-paper">arXiv</span></span></div>
     <div class="news-row"><span class="news-date">Jul 2026</span><span>Released <a href="https://zli12321.github.io/LHTB/">Long-Horizon-Terminal-Bench</a> — 46 long-horizon terminal tasks with dense, subtask-level grading. <a href="https://arxiv.org/abs/2607.08964">Paper</a> <span class="tag tag-paper">arXiv</span></span></div>
     <div class="news-row"><span class="news-date">Jun 2026</span><span>New research note: <a href="https://ruhan-wang.github.io/Harness-Handbook/">Harness Handbook</a>, with Ruhan Wang. <span class="tag tag-paper">Note</span></span></div>
     <div class="news-row"><span class="news-date">Summer 2026</span><span>Leading a research program on self-evolving terminal agents with four student researchers.</span></div>
@@ -78,16 +80,21 @@
     <h2>Current Research</h2>
     <p class="section-intro">
       In summer 2026 I am leading a research program on <strong>self-evolving terminal agents</strong>,
-      working with Zhongzhi Li, Ruhan Wang, Zongxia Li, and Junyao Yang. We study how an agent training
-      system can improve along three coupled axes: the environments it trains on, the harness through
-      which it acts, and the learning signals extracted from long trajectories. Notes and artifacts are
-      released as the work matures.
+      working with Zhongzhi Li, Ruhan Wang, Zongxia Li, and Junyao Yang. We are building an integrated
+      stack for agents that must keep working over long horizons: dense evaluation, recursive synthesis
+      of executable environments, readable agent harnesses, and stable asynchronous post-training.
     </p>
 
     <div class="pub-item">
-      <div class="pub-title"><a href="https://ruhan-wang.github.io/Harness-Handbook/">Harness Handbook</a></div>
-      <div class="pub-desc">A behavior-first map that helps people and coding agents locate where a harness behavior lives before editing it.</div>
-      <div class="pub-meta">Agent systems <span class="sep">·</span> Ruhan Wang <span class="sep">·</span> Jun 2026</div>
+      <div class="pub-title"><a href="https://zhongzhi660.github.io/recursive-verified-synthesis-site/">Recursive Synthesis for Long-Horizon Terminal Tasks</a></div>
+      <div class="pub-desc">A recursive verified synthesis pipeline that evolves complete executable task bundles into 37,484 increasingly difficult training tasks across 15 rounds.</div>
+      <div class="pub-meta"><span class="lead">Project lead</span> <span class="sep">·</span> Data engine <span class="sep">·</span> Aug 2026 <span class="sep">·</span> <a href="https://arxiv.org/abs/2608.05466">Paper</a> <span class="sep">·</span> <a href="https://zhongzhi660.github.io/recursive-verified-synthesis-site/">Blog</a> <span class="sep">·</span> <a href="https://huggingface.co/collections/Zhongzhi1228/recursive-task-synthesis">Data &amp; Models</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title"><a href="https://jyyang26.github.io/stable_async_analysis/">Stale but Stable</a></div>
+      <div class="pub-desc">A staleness-adaptive trust region that tightens PPO-style clipping only for high-mismatch tokens, stabilizing fully decoupled asynchronous RL.</div>
+      <div class="pub-meta"><span class="lead">Project lead</span> <span class="sep">·</span> Agentic RL <span class="sep">·</span> Jul 2026 <span class="sep">·</span> <a href="https://arxiv.org/abs/2607.18722">Paper</a> <span class="sep">·</span> <a href="https://jyyang26.github.io/stable_async_analysis/">Blog</a> <span class="sep">·</span> <a href="https://github.com/jyyang26/SAT">Code</a></div>
     </div>
 
     <div class="pub-item">
@@ -97,15 +104,9 @@
     </div>
 
     <div class="pub-item">
-      <div class="pub-title">Dive into Staleness Analysis in Asynchronous RL</div>
-      <div class="pub-desc">A mathematical and empirical guide to rollout–training mismatch, with a staleness-adaptive trust region for controlling it.</div>
-      <div class="pub-meta">Agentic RL <span class="sep">·</span> Junyao Yang <span class="sep">·</span> <span class="status">note forthcoming</span></div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title">Continual Task Synthesis for Terminal Agents</div>
-      <div class="pub-desc">Turning seed environments, failed trajectories, and recovery traces into SFT- and RL-ready terminal tasks.</div>
-      <div class="pub-meta">Data engine <span class="sep">·</span> Zhongzhi Li <span class="sep">·</span> <span class="status">in progress</span></div>
+      <div class="pub-title"><a href="https://ruhan-wang.github.io/Harness-Handbook/">Harness Handbook</a></div>
+      <div class="pub-desc">A behavior-first map that helps people and coding agents locate where a harness behavior lives before editing it.</div>
+      <div class="pub-meta">Agent systems <span class="sep">·</span> Ruhan Wang <span class="sep">·</span> Jun 2026</div>
     </div>
   </section>
 
@@ -159,6 +160,18 @@
   <!-- SELECTED PUBLICATIONS -->
   <section>
     <h2>Selected Publications <a href="publications.html">full list →</a></h2>
+
+    <div class="pub-item">
+      <div class="pub-title">Recursive Synthesis for Long-Horizon Terminal Tasks</div>
+      <div class="pub-authors">Zhongzhi Li*, <strong>Yucheng Shi*</strong>, Zongxia Li*, Ruhan Wang, Anhao Li, Zixun Huang, Junyao Yang, Lei Ke, Ninghao Liu, Haitao Mi, Leowei Liang</div>
+      <div class="pub-meta"><em>arXiv 2026</em> <span class="sep">·</span> <span class="lead">Project lead</span> <span class="sep">·</span> <a href="https://arxiv.org/abs/2608.05466">Paper</a> <span class="sep">·</span> <a href="https://zhongzhi660.github.io/recursive-verified-synthesis-site/">Blog</a> <span class="sep">·</span> <a href="https://huggingface.co/collections/Zhongzhi1228/recursive-task-synthesis">Data &amp; Models</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">Stale but Stable: Staleness-Adaptive Trust Regions for Stabilizing Asynchronous Reinforcement Learning</div>
+      <div class="pub-authors">Junyao Yang, <strong>Yucheng Shi</strong>, Zongxia Li, Zhongzhi Li, Ruhan Wang, Xiangxin Zhou, Kishan Panaganti, Haitao Mi, Leowei Liang</div>
+      <div class="pub-meta"><em>arXiv 2026</em> <span class="sep">·</span> <span class="lead">Project lead</span> <span class="sep">·</span> <a href="https://arxiv.org/abs/2607.18722">Paper</a> <span class="sep">·</span> <a href="https://jyyang26.github.io/stable_async_analysis/">Blog</a> <span class="sep">·</span> <a href="https://github.com/jyyang26/SAT">Code</a></div>
+    </div>
 
     <div class="pub-item">
       <div class="pub-title">Long-Horizon-Terminal-Bench: Testing the Limits of Agents on Long-Horizon Terminal Tasks with Dense Reward-Based Grading</div>
